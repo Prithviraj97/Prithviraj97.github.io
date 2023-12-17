@@ -15,11 +15,16 @@
         <h1>Prithvi Raj Singh</h1>
         <p>ML Research Engineer</p> -->
             <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
+                <div class="nav-toggle" onclick="toggleNavMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#">Research</a></li>
                     <li><a href="https://Prithviraj97.github.io/academic.html">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog Posts</a></li>
+                    <li><a href="#">Publications</a></li>
                     <li><a href="https://prithviraj97.github.io/Prithvi-Raj-Singh-Apple.pdf">CV</a></li>
                 </ul>
             </nav>
@@ -28,12 +33,12 @@
         <main>
             <img src="https://Prithviraj97.github.io/Prithvi1.jpg" alt="Prithvi Raj Singh" class="Photo">
             <h1>Prithvi Raj Singh</h1>
-            <p>ML Research Engineer</p>
+            <p>Machine Learning Researcher and Software Engineer</p>
         </main>
 
         <section id="About">
             <h2>About Me</h2>
-            <p>Hi 🤚! I am Prithvi Raj Singh 🙂. I am aspiring Machine Learning Research Engineer with love for Computer Vision,
+            <p>Hi 🤚! I am Prithvi Raj Singh 🙂. I am Machine Learning Research Engineer with love for Computer Vision,
                 Machine Learning Operations, and Optimization
                 Problems.I recently graduated with MS in Computer Science from University of Louisiana at
                 Lafayette. I was co-advised by <a href="https://userweb.ucs.louisiana.edu/~nrg0821/">Dr. Raju Gottumukkala</a> and <a href="https://scholar.google.com/citations?user=yCwFNtMAAAAJ&hl=en">Dr. Anothy Maida.</a> </p>
@@ -76,20 +81,32 @@
             <!-- Add your project details here -->
         </section>
 
-        <section id="reference">
+        <section id="references">
             <h2>References</h2>
             <!-- Add your reference details here -->
-            <li>Dr. Raju Gootumukkala
-                Associate Professor
-                Department of Mechanical Engineering
-                Director, Informatics Research Institute
-            </li>
+            <ul>
+                <li>
+                    <strong>Dr. Raju Gottumukkala</strong>
+                    <p>Associate Professor, Department of Mechanical Engineering</p>
+                    <p>Director, Informatics Research Institute</p>
+                    <p>Contact: raju@louisiana.edu</p>
+                </li>
+                <li>
+                    <strong>Dr. Anthony Maida</strong>
+                    <p>Associate Professor</p>
+                    <p>Center for Advanced Computing Studies</p>
+                    <p>Contact: maida@louisiana.edu</p>
+                </li>
+                <!-- Add more references as needed -->
+            </ul>
         </section>
 
         <footer>
             <p>Contact me at: prithvirajsingh351@gmail.com</p>
         </footer>
     </div>
+    <script src="script.js"></script> <!-- Add this line to include JavaScript file -->
+
 </body>
 
 </html>
