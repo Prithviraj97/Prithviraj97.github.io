@@ -146,3 +146,20 @@ nav {
       display: block; /* Show the hamburger icon on smaller screens */
   }
 }
+/* Add these styles or adjust as needed */
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  color: #333; /* Adjust the color as needed */
+  margin-right: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.social-icons a:hover {
+  color: #007bff; /* Change to your preferred hover color */
+}
