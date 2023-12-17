@@ -86,7 +86,7 @@ footer {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
 }
 
 .nav-toggle {
@@ -104,8 +104,10 @@ nav {
 .nav-menu {
   list-style-type: none;
   display: flex;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-menu li {
@@ -123,7 +125,7 @@ nav {
   .nav-menu {
       display: none; /* Hide the menu on smaller screens initially */
       flex-direction: column;
-      position: right;
+      position: center;
       top: 60px;
       left: 0;
       width: 100%;
