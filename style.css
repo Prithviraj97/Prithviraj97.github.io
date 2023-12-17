@@ -2,6 +2,21 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4; /* Add a background color for better visibility */
+
+    /* Center the content */
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+  max-width: 800px; /* Adjust the max-width as per your preference */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff; /* Set a background color for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 header {
