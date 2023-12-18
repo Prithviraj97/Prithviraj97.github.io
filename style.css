@@ -23,7 +23,7 @@ body {
   z-index: 1; /* Ensure the container is above the background */
 }
 .background-image {
-  background-image: url('your-background-image.jpg'); /* Replace with your image URL */
+  background-image: url('https://Prithviraj97.github.io/river-valley.jpg'); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   position: fixed;
