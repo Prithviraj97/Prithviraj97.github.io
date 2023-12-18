@@ -303,3 +303,13 @@ figure {
   text-align: center;
   margin-top: 10px; /* Optional: Adjust the margin as needed */
 }
+.personal{
+  max-width: 48%; /* Adjust the width as needed, allowing some space for margin */
+    height: auto;
+    display: block;
+    margin: 10px 0; /* Optional: Adjust the margin as needed */
+}
+.personal-container{
+  display: flex;
+  justify-content: space-between;
+}
