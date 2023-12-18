@@ -11,7 +11,7 @@ body {
   align-items: center;
 }
 .container {
-  max-width: 800px; /* Adjust the max-width as per your preference */
+  max-width: 900px; /* Adjust the max-width as per your preference */
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -92,25 +92,37 @@ nav {
   display:flex;
   justify-content:space-evenly;     
   align-items: center; 
+  /* flex-direction:column;  */
 }
 
 .nav-toggle {
   cursor: pointer; 
-  display: none; /* Initially hidden on larger screens */
+  display: none;
+  /* display: none; Initially hidden on larger screens */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Arrange bars evenly */
+  /* height: 25px; Adjust the height as needed */ 
 }
 
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: #e79292;
   margin: 6px 0;
+  /* align-items: right; */
 }
+/* .bar-container {
+  display: flex;
+  justify-content:center; /* Align items to the right */
+ */
 
 .nav-menu {
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0;
+  /* right: 0; */
   padding: 0;
   align-items: center;
 }
@@ -123,6 +135,12 @@ nav {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  
+}
+/* Change color on hover */
+.nav-menu a:hover {
+  color: #007bff; /* Change to your preferred hover color */
+  text-decoration: underline;
 }
 
 /* Media query for smaller screens */
@@ -133,10 +151,17 @@ nav {
       position: center;
       top: 60px;
       left: 0;
+      right: 0;
       width: 100%;
       background-color: #333;
       padding: 10px;
   }
+  .nav-menu.right {
+    right: 10;
+}
+  .nav-menu.left {
+  left: 0;
+}
 
   .nav-menu.show {
       display: flex; /* Show the menu when toggled */
@@ -149,7 +174,11 @@ nav {
 
   .nav-toggle {
       display: block; /* Show the hamburger icon on smaller screens */
+      position: absolute;
+      top: 40px; /* Adjust the top position as needed */
+      right: 30px; /* Adjust the right position as needed */
   }
+
 }
 /* Add these styles or adjust as needed */
 .social-icons {
