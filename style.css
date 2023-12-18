@@ -269,5 +269,37 @@ main {
   align-items: center;
   text-align: center;
 }
+h2{
+  align-items: flex-start;
+  color: midnightblue;
+}
+h4{
+  display: flex;
+  justify-content: center;
+  color: teal;
+  margin-top: auto;
+}
 
-/* Background image css code */
+/* Add this to your existing styles or in a separate stylesheet */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+img.responsive-image {
+  max-width: 75%;
+  height: auto;
+  display: flex;
+  margin: 10px auto; /* Optional: Adjust the margin as needed */
+}
+figure {
+  text-align: center; /* Center the content within each figure */
+  flex: 0 0 60%; /* Adjust the width as needed, allowing some space for margin */
+  margin: 0 1%; /* Add some space between the figures */
+}
+.image-caption {
+  text-align: center;
+  margin-top: 10px; /* Optional: Adjust the margin as needed */
+}
