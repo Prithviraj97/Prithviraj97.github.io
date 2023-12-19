@@ -346,6 +346,6 @@ cite {
 .hobbyphoto{
     max-width: 30%; /* Ensure the photo doesn't exceed its container */
     height: auto; /* Maintain the aspect ratio of the photo */
-    border-radius: 50px; /* Optional: Add rounded corners to the photo */
+    border-radius: 25px; /* Optional: Add rounded corners to the photo */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
