@@ -273,6 +273,9 @@ h2{
   align-items: flex-start;
   color: midnightblue;
 }
+h3{
+  color: teal;
+}
 h4{
   display: flex;
   justify-content: center;
@@ -312,4 +315,30 @@ figure {
 .personal-container{
   display: flex;
   justify-content: space-between;
+}
+#Thesis{
+  justify-content: right;
+}
+
+/* Add this to your existing styles or in a separate stylesheet */
+
+.quotes {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the quotes */
+}
+
+blockquote {
+  font-family: 'Georgia', serif; /* Use a distinct font style */
+  font-size: 18px;
+  color: #333; /* Use a distinct font color */
+  border-left: 4px solid #e79292; /* Optional: Add a left border for emphasis */
+  padding-left: 20px; /* Optional: Adjust padding for spacing */
+}
+
+cite {
+  display: block;
+  margin-top: 10px; /* Adjust the margin as needed */
+  font-style: italic; /* Optional: Use italic for the citation */
+  color: #666; /* Optional: Use a distinct color for the citation */
+  text-align:center; 
 }

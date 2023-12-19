@@ -85,7 +85,7 @@
                 in my ancestral village about 30 kilometers far from Birgunj.
                 I got my primary school education in my village and moved to town for secondary education. After
                 finishing highschool I travelled to the United States for further education
-                and career opportunities.
+                and career opportunities. I love teaching and sharing my knowledge with peers and juniors.
             </p>
         </section>
         <section id="research">
@@ -109,33 +109,73 @@
         
             <p>While at UL Lafayette, I was also working as a Software Engineering Research Associate for Louisiana
                 Transportation Research Center. I helped various Researchers and GeoTech Engineers with implementation of their
-                idea in
-                to usable Software. I am greatly fond of Software Engineering principles and love coding, and learning new
-                tech stack. I love teaching and sharing my knowledge with peers and juniors.
+                idea in to usable Software. I am greatly fond of Software Engineering principles and love coding, and learning new
+                tech stack. 
             </p>
         </section>
 
         <section id="Projects">
-            <h2>Projects</h2>
+            <h2> Some Projects</h2>
             <!-- Add your project details here -->
+            <h3>Learning with a Limited Sample</h3>
+            <p>
+                As a final term paper for deep learning class offered at UL Lafayette, I conducted experimental analysis on the learning capability of various deep learning
+                based models like CNN, Compact Convolutional Transformers and Vision Transformers. The goal of the research was to understand the efficiency of larger 
+                deep neural networks for image classification tasks on various datasets like CIFAR-10, CIFAR-100, MNIST, Fashion-MNIST, and few other small datasets. The result showed that 
+                heavier deep neural networks like ViT, CCT are inefficient interms of accuracy and speed, while few layers deep CNN model can give significant accuracy as well as 
+                speed. It shows that modern deep neural networks are power and data hungry, and it is not always wise to implement heavier, multilayer neural networks for simple tasks. More 
+                details can be at <a href="https://github.com/Prithviraj97/CS598DeepLearning">this Github repo</a>.
+            </p>
+
+            <h3>Natural Language Processing and Image classification with Transformer</h3>
+            <p>
+                In this research, we seek to implement Transformer primarily for the NLP task, focused
+                on Sentiment Analysis, and Language Translation. We performed language translation for English-to-French, English-to-Spanish,
+                Portuguese-to-English. Our general transformer does a decent performance in language translation, and we get acceptable BLEU
+                score, accuracy, and F1 measure for all three language translations. Our sentiment analysis task focused on question answering
+                (Q-A), text classification, and Named Entity Recognition (NER). For the Q-A we can very exact match score of 78%, we got
+                consistent training accuracy of 40% for the NER task. The hugging face transformer API performs wildly better than any present
+                models for NLP tasks. We discuss the recently developed Switch Transformer, MobileViT. Our implementation task for Switch
+                Transformer and MobilViT wasn’t successful as they have huge GPU power. We perform ViT tasks for image classification on
+                CIFAR-10 with a test accuracy of 70% and top-5 accuracy of 97%. Paper and code can be found at <a href="https://github.com/Prithviraj97/NeuralNetworks">this GitHub repository</a>
+            </p>
+
+            <h3>Object Detection with Deep Reinforcement Learning</h3>
+            <p>
+                The idea of creating a virtual agent that can follow our instructions and learn from it to do a task we want it to do is fascinating, and the same is the idea for using reinforcement learning in object-tracking problems. 
+                We formulate the problem as a sequential decision-making process and the agent is equipped with a conventional object detector that detects the object and the agent is trained to make the detection result better. 
+                In this paper, we experiment with using the dynamic method for object detection. Our detector, which uses VGG16 pre-trained on ImageNet as a base, is trained using the PASCAL VOC2012 dataset. 
+                The agent takes more actions in transforming the bounding box and the reward accumulated. The AP and recall are best for an IoU threshold of 0.5 or lower. We get AP and recall of 36.68 and 59.0 respectively for the 'cat' class at IoU of 0.5. 
+                In our experiment the AP and recall declines sharply for IoU threshold for IoU threshold [0.4, 0.5, 0.6, 0.7, 0.8]. <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf">PDF of the paper</a>
+            </p>
+
+            <h3>Housing Price Prediction on Kaggle</h3>
+            <p>
+                In this paper, we will be summarizing our work on the Kaggle Housing Prediction competition. We used the D2L book as our reference worked on tuning the hyperparameters and observed the performance of our model. 
+                The result of submission on Kaggle for official testing is RMSE. Our work on tuning the hyperparameters didn't necessarily bring any positive change. 
+                We have also tried to answer and explain our model, variable standardization, layer count, and regularization. 
+                The best performance our system reported was a training error of 0.126395 and, a valid error of 0.146429, but our chart showed that the model was underfitting. 
+                We obtained a score of 0.15151 on our official submission on Kaggle ranking 1500th among all participants. <a href="https://Prithviraj97.github.io/kaggle_housing.pdf">Link to PDF</a>
+            </p>
+
         </section>
 
         <section id="Thesis">
             <h2>Thesis</h2>
-            <h4>MS Thesis: Real-time Object Detection and Tracking of Fast-moving Small Objects using RGB-D camera and Computer Vision Technicques</h4>
+            <h4>MS Thesis: Real-time Object Detection and Tracking of Fast-moving Small Objects using RGB-D camera and Computer Vision Technicques.</h4>
             <p>
                 The thesis explores the use of stereo camera for detection and tracking of fast-moving small objects in 3D space. Several Object  Detection and Tracking
                 algorithms were experimented. For Object Detection modern YOLO algorithms like YOLOv5, YOLOv7, YOLOv8 as well other mutli and single stage detectors were used.
                 We implemented Kalman Filter based algorithms for the tracking purpose. After several experiments with the state-of-the-art models, the results were unsatisfactory 
                 so I worked on augmenting the use of Kinematics to design new tracking system that can enhance the tracking and trajectory forecasting of fast-moving tiny objects. More details can 
-                be found at: [insert link]
+                be found at: [insert link].
             </p>
-            <h4>Undergraduate Capstone Project: Bidirectional autonomous robot for optimal path planning </h4>
+            <h4>Undergraduate Capstone Project: Bidirectional autonomous robot for optimal path planning. </h4>
             <p>
                 Me and my friend 'Blake Drost' worked on building small robot from scratch, that could traverse in forward or backward direction to find the optimal path to reach the target.
-                We implemented heuristic search algorithms which the robot used to find the optimal path before making move towards the target. The robot had multiple ultrasonic and small lidar sensors
+                We implemented breadth first search (BFS) algorithm which the robot used to find the optimal path before making move towards the target. The robot had multiple ultrasonic and small lidar sensors
                 to detect obstacle in the path. If there were obstacle in the optimal path the robot would try to avoid it and if nothing works it will compute new optimal path from the current position
-                and traverse towards that position. More details can be found in our github repository [Insert Link].
+                and traverse towards that position. More details can be found in our <a href="https://github.com/Prithviraj97/Servitor">github repository</a>.
             </p>
         </section>
 
@@ -154,6 +194,12 @@
                     <p>Associate Professor</p>
                     <p>Center for Advanced Computing Studies</p>
                     <p>Contact: maida@louisiana.edu</p>
+                </li>
+                <li>
+                    <strong>Dr. Catherine Anderson </strong>
+                    <p>Professor Emeritus, Dept. of Computer Science and Engineering</p>
+                    <p>Director, McNeese Robotics Lab</p>
+                    <p>Contact: canderson@mcneese.edu</p>
                 </li>
                 <!-- Add more references as needed -->
             </ul>
