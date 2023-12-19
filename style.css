@@ -35,6 +35,18 @@ body {
   z-index: 1; /* Ensure the background is behind other content */
   overflow-y: auto;
 }
+.hobbybg-image{
+  background-image: url('https://Prithviraj97.github.io/new%20images/IMG_3229.jpeg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure the background is behind other content */
+  overflow-y: auto;
+}
 
 header {
   background-color: #333;
