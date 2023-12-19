@@ -3,14 +3,14 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  background-color: #e6dddd; /* Add a background color for better visibility */
+  background-color: #eedddd; /* Add a background color for better visibility */
 
   /* Center the content */
   display: flex;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: #fff; /* Set a background color as a fallback */
+  background-color: #e7d8d8; /* Set a background color as a fallback */
   /* overflow: hidden; Prevent scrollbar due to background image */
 }
 .container {
