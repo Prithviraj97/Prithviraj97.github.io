@@ -29,8 +29,9 @@ body {
 
 .small-container {
     width: 40%; /* Adjust the width as needed */
-    height: fit-content;
+    height: auto;
     padding: 20px;
+    margin-top: auto;
     background-color: #f1f1f1; /* Add a background color for the small container */
 }
 
@@ -64,3 +65,21 @@ footer {
     color: #fff; /* Set text color for the footer */
     margin-top: auto;
 }
+/* Add these styles or adjust as needed */
+.social-icons {
+    display: flex;
+    /* align-items: right; */
+    /* flex-direction: column; */
+  }
+  
+  .social-icons a {
+    color: #333; /* Adjust the color as needed */
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover */
+  .social-icons a:hover {
+    color: #007bff; /* Change to your preferred hover color */
+  }
