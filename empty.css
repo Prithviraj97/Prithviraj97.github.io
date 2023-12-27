@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+   }
+   
+   .container {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+   }
+   
+   .side-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+   }
+   
+   .side-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+   }
+   
+   .side-container h2 {
+    margin: 10px 0;
+   }
+   
+   .side-container h3 {
+    color: #666;
+   }
+   
+   .social-icons {
+    margin-top: 20px;
+   }
+   
+   .social-icons a {
+    margin: 0 10px;
+   }
+   
+   .main-container {
+    flex: 3;
+    padding: 20px;
+   }
