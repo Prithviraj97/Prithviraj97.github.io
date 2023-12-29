@@ -12,8 +12,9 @@ body {
 
 .page-container {
     display: flex;
-    flex: 1;
-    flex-direction: column;
+    /* flex: 1; */
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 /* .container {
@@ -28,17 +29,22 @@ body {
   } */
 
 .small-container {
-    width: 40%; /* Adjust the width as needed */
-    height: auto;
+    /* width: 30%; Adjust the width as needed */
+    /* height: auto;
     padding: 20px;
-    margin-top: auto;
-    background-color: #f1f1f1; /* Add a background color for the small container */
+    margin-top: auto; */
+    /* background-color: #f1f1f1; Add a background color for the small container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .profile-photo {
     max-width: 30%; /* Make sure the photo doesn't exceed its container */
     height: auto;
     border-radius: 25px; /* Make the photo circular */
+    /* align-items: center; */
 }
 
 .social-links {
@@ -46,15 +52,18 @@ body {
 }
 
 .social-links a {
-    display: block;
+    display:block;
     margin-bottom: 10px;
     text-decoration: none;
     color: #333;
 }
 
 .big-container {
-    width: 70%; /* Adjust the width as needed */
-    padding: 20px;
+    /* width: 70%; Adjust the width as needed */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /* Your existing styles */
 
