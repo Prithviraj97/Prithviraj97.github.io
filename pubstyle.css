@@ -14,15 +14,16 @@ body {
 }
 .small-container {
   width: 30%; /* Take up the full width */
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2;
   padding: 20px;
   box-sizing: border-box;
   align-items: center;
-  align-self: flex-start;
+  align-self: flex-start; */
+  float:inline-start;
 }
 
 .page-container {
-  /* display: flex; */
+  /* display:block;
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
@@ -32,6 +33,9 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
+  align-self: flex-start; */
+  width: 70%;
+  float:inline-end;
 }
 
 .big-container {
@@ -39,6 +43,7 @@ body {
   background-color: #e5e5e5;
   padding: 20px;
   box-sizing: border-box;
+  
 }
 
 /* .container {
@@ -82,6 +87,7 @@ header {
   color: #fff;
   text-align: center;
   padding: 2.5rem;
+  width:auto;
 }
 .header-content {
   display: flex;
@@ -109,6 +115,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
+  width: auto;
 }
 /* Add these styles or adjust as needed */
 .social-icons {
