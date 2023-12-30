@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -7,13 +7,13 @@
     }
     .small-container {
       flex: 1;
-      background-color: #c2a0a0; /* Add background color for visibility */
-      padding: 20px; /* Add padding for spacing */
+      background-color: #c2a0a0; 
+      padding: 20px; 
     }
     .big-container {
       flex: 2;
-      background-color: #6b5050; /* Add background color for visibility */
-      padding: 20px; /* Add padding for spacing */
+      background-color: #6b5050; 
+      padding: 20px; 
     }
   </style>
 </head>
@@ -26,9 +26,9 @@
     <p>Your Role</p>
     <p>Other Personal Info</p>
     <h2>Social Links</h2>
-    <a href="#" class="fa fa-facebook"></a> <!-- Add social media links -->
+    <a href="#" class="fa fa-facebook"></a> 
     <a href="#" class="fa fa-twitter"></a>
-    <!-- Add your photo here -->
+    
     <img src="your-photo.jpg" alt="Your Photo">
   </div>
   <div class="big-container">
@@ -37,5 +37,95 @@
   </div>
 </div>
 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Other head elements, title, and any necessary meta tags -->
+    <link rel="stylesheet" href="test.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <nav>
+          <div class="nav-toggle" onclick="toggleNavMenu()">
+              <div class="bar"></div>  
+              <div class="bar"></div>
+              <div class="bar"></div> 
+              <div class="bar"></div>     
+          </div>
+
+          <ul class="nav-menu right">
+              <!-- <li><a href="#">Home</a></li> -->
+              <!-- <li><a href="#">Research</a></li> -->
+              <li><a href="https://Prithviraj97.github.io/academic.html" title="About">About</a></li>
+              <li><a href="https://Prithviraj97.github.io/hobby.html">Hobbies</a></li>
+              <li><a href="#">Blog Posts</a></li>
+              <li><a href="#">Publications</a></li>
+              <li><a href="https://prithviraj97.github.io/Prithvi-Raj-Singh-Apple.pdf">CV</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <!-- Parent container for small and page containers -->
+    <div class="container-wrapper">
+        <!-- Small container for personal information -->
+        <div class="small-container">
+            <!-- Add your small container content here -->
+            <img src="https://Prithviraj97.github.io/webimages/IMG_7078.jpeg" alt="Your Photo" class="profile-photo">
+        <h1>Prithvi Raj Singh</h1>
+        <p>ML Researcher and Software Engineer</p>
+
+        <!-- Social links -->
+        <div class="social-icons">
+            <a href="https://github.com/Prithviraj97"  title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://linkedin.com/in/prithvi25/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.datacamp.com/portfolio/prithvirajsingh358" target="_blank" title="DataCamp"><i class="fab fa-python fa-2x"></i></a>
+            <a href="https://x.com/prithvi15573761?s=21&t=stOuEPf7YH2ymhivNip40Q" target="_blank" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="http://www.kaggle.com"><i class="fab fa-kaggle fa-2x"></i></a>
+            <a href="http://scholar.google.com"><i class="fas fa-fw fa-graduation-cap fa-2x"></i></a>
+        </div>   
+        </div>
+
+        <!-- Page container -->
+        <div class="page-container">
+            <!-- Big container for additional details -->
+            
+            <div class="big-container">
+                <!-- Add your big container content here -->
+                <h2>About Me</h2>
+            <p>Hi 🤚! I am Prithvi Raj Singh 🙂. I am Machine Learning Research Engineer with love for Computer Vision,
+                Machine Learning Operations, and Optimization
+                Problems.I recently graduated with MS in Computer Science from University of Louisiana at
+                Lafayette. I was co-advised by <a href="https://userweb.ucs.louisiana.edu/~nrg0821/">Dr. Raju Gottumukkala</a>
+                and <a href="https://scholar.google.com/citations?user=yCwFNtMAAAAJ&hl=en">Dr. Anothy Maida.</a> </p>
+            <p>I finished my Undergraduate from McNeese State University majoring in Computer Science with Minor in Math. I am a
+                avid learner and explorer and I love learning cool new techs. While I am not a
+                fitness freak, I value the importance of regular exercise
+                in mental and physical well-being of person, so I love to do physical activities like lifting weights,
+                running, yoga, and various other fitness exercises</p>
+            <p>I was born in the southern part of Nepal in well known town called Birgunj. I spent most of my childhood
+                in my ancestral village about 30 kilometers far from Birgunj.
+                I got my primary school education in my village and moved to town for secondary education. After
+                finishing highschool I travelled to the United States for further education
+                and career opportunities. I love teaching and sharing my knowledge with peers and juniors.
+            </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Add your footer content here -->
+        <p id="last-updated">Last Updated: <span id="last-updated-date"></span></p>
+            <p>Website under construction</p>
+            <p>prithvirajsingh351@gmail.com</p>
+            <div class="copyright">
+                &copy; 2023 Prithvi Raj Singh. All rights reserved.
+            </div>
+    </footer>
 </body>
 </html>
