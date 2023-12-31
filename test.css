@@ -67,6 +67,7 @@ body {
   }
 .container-wrapper {
     display: flex;
+    flex:1;
 }
 
 .small-container {
@@ -81,18 +82,18 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #e6dddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(253, 253, 253, 0.1);
 }
 
 .big-container {
     width: 100%;
-    background-color: #e5e5e5;
+    background-color: #f2f2f2;
     padding: 20px;
     box-sizing: border-box;
 }
 .profile-photo {
-    max-width: 30%; /* Make sure the photo doesn't exceed its container */
+    max-width: 40%; /* Make sure the photo doesn't exceed its container */
     height: auto;
     border-radius: 25px; /* Make the photo circular */
     align-items: center;
