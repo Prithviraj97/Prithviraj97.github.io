@@ -125,9 +125,6 @@ body {
         padding: 10px;
     }
     
-    /* body {
-      font-size: 14px;
-  } */
     .nav-menu.right {
       right: 10;
   }
@@ -151,8 +148,9 @@ body {
         right: 20px; /* Adjust the right position as needed */
     }
     .container-wrapper .small-container {
-        display: none;
+        display: none; 
       }
+    
   }
   /* Your existing styles */
 
@@ -227,7 +225,10 @@ body {
 h1{
     margin-bottom: 4px;
 }
-  /* p {
+  p {
     margin: 0.5rem 0;
     text-align: justify;
-  } */
+  }
+  footer p {
+    text-align: center;
+  }

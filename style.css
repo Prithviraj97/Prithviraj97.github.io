@@ -259,7 +259,7 @@ h1 {
 }
 
 p {
-  margin: 0.5rem 0; /* Adjust the top and bottom margin as needed */
+  margin: 0.5rem 0; 
   text-align: justify;
 }
 footer p {
