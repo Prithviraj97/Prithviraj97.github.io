@@ -58,6 +58,57 @@ body {
     text-decoration: none;
     color: #fff;
   }
+
+  nav {
+    display:flex;
+    justify-content:space-evenly;     
+    align-items: center; 
+    /* flex-direction:column;  */
+  }
+  
+  .nav-toggle {
+    cursor: pointer; 
+    display: none;
+    /* display: none; Initially hidden on larger screens */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Arrange bars evenly */
+    /* height: 25px; Adjust the height as needed */ 
+  }
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #e79292;
+    margin: 6px 0;
+    /* align-items: right; */
+  }
+
+  .nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    /* right: 0; */
+    padding: 0;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    margin-right: 20px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    
+  }
+  /* Change color on hover */
+  .nav-menu a:hover {
+    color: #007bff; /* Change to your preferred hover color */
+    text-decoration: underline;
+  }
+  
   footer {
     background-color: #333;
     color: #fff;
