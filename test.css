@@ -75,6 +75,9 @@ body {
     background-color: #f2f2f2;
     padding: 20px;
     box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-container {
@@ -93,7 +96,7 @@ body {
     box-sizing: border-box;
 }
 .profile-photo {
-    max-width: 40%; /* Make sure the photo doesn't exceed its container */
+    max-width: 45%; /* Make sure the photo doesn't exceed its container */
     height: auto;
     border-radius: 25px; /* Make the photo circular */
     align-items: center;
@@ -103,3 +106,10 @@ body {
     margin-top: 10px;
   
   }
+h1{
+    margin-bottom: 5px;
+}
+  /* p {
+    margin: 0.5rem 0;
+    text-align: justify;
+  } */
