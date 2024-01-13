@@ -3,7 +3,7 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  background-color: #e7d8d8; /* Add a background color for better visibility */
+  background-color: #f3eeee; /* Add a background color for better visibility */
 
   /* Center the content */
   display: flex;
@@ -18,7 +18,7 @@ body {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #e6dddd; /* Set a background color for the container */
+  background-color: #f1ecec; /* Set a background color for the container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1; /* Ensure the container is above the background */
