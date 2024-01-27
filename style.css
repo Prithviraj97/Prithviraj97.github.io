@@ -105,6 +105,7 @@ footer {
 }
 
 .Photo {
+  margin-top: 10px;
   max-width: 200px; /* Adjust the size as needed */
   height: auto; /* Adjust the size as needed */
   /* border-radius: 50%; */
