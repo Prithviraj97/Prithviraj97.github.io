@@ -59,6 +59,10 @@ header {
   align-items: center;
   justify-content: stretch;
 }
+.sticky-header {
+  position: sticky;
+  top: 20px;
+}
 
 header img {
   width: 150px;
