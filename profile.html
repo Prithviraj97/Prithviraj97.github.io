@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>User Profile Card</title>
+  <link rel="stylesheet" href="profile.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="profile.js"></script> -->
+</head>
+<body>
+  <!-- <div class="profile-card">
+    <div class="profile-picture">
+      <img src="IMG_6283.jpg" alt="Profile Picture">
+    </div>
+    <div class="profile-info">
+      <h1>John Doe</h1>
+      <h2>Software Engineer</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus eget nunc tincidunt laoreet. Phasellus eget lacus eget nunc tincidunt laoreet.</p>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $(".profile-card").hover(function() {
+        $(this).css("background-color", "#f2f2f2");
+      }, function() {
+        $(this).css("background-color", "white");
+      });
+      $(".profile-info").click(function() {
+        $(this).children("p").toggle();
+      });
+    });
+  </script> -->
+  <div class="profile-card">
+    <img src="IMG_6283.jpg" alt="User" class="profile-picture" />
+    <div class="profile-info">
+      <h2 class="profile-name">John Doe</h2>
+      <h3 class="profile-job-title">Software Engineer</h3>
+      <p class="profile-bio hidden">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget ligula
+        vitae nisi tincidunt dapibus. Pellentesque cursus tortor vel mi rhoncus
+        imperdiet.
+      </p>
+      <button class="bio-toggle">Read more</button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+        $(".bio-toggle").click(function () {
+            $(this).prev(".profile-bio").toggleClass("hidden");
+            if ($(this).text() === "Read more") {
+                $(this).text("Read less");
+            } else {
+                $(this).text("Read more");
+            }
+        });
+    });
+</script>
+</body>
+</html>
