@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fa;
+            margin-top: 20px;
+        }
+        .form-control, .form-control:focus {
+            border-color: #dedede;
+            box-shadow: none;
+        }
+        .btn-custom {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+        .btn-custom:hover {
+            background-color: #004494;
+        }
+        .card-header {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+        .required:after {
+            content: "*";
+            color: red;
+        }
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 5px;
+            width: 5px;
+        }
+        .custom-file-input {
+            display: none;
+        }
+        .form-check-label {
+            margin-bottom: 0;
+        }
+        .btn-link {
+            color: #0056b3;
+            font-size: 16px;
+        }
+        .btn-link:hover {
+            color: #003d7a;
+        }
+        .remove-contact {
+            cursor: pointer;
+            color: #ff0000;
+        }
+        .add-contact {
+            cursor: pointer;
+            color: #0056b3;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            overflow: auto;
+        }
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: #e7f1ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Client Management</h2>
+        <form action="/Client-management" method="POST">
+            <!-- Client Information -->
+            <div class="card mb-3">
+                <div class="card-header">Client Information</div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label class="required" for="clientName">Client Name</label>
+                            <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Enter Client Name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="required" for="clientType">Client Type</label>
+                            <select id="clientType" name="clientType" class="form-control" required>
+                                <option value="">Select</option>
+                                <option value="buyer">Buyer</option>
+                                <option value="buyingAgent">Buying Agent</option>
+                                <option value="buyingOffice">Buying Office</option>
+                                <option value="importer">Importer</option>
+                                <option value="retailer">Retailer</option>
+                                <option value="manufacturer">Manufacturer</option>
+                                <!-- Add/remove client types as needed -->
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Address and Identification -->
+            <div class="card mb-3">
+                <div class="card-header">Address & Identification</div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="streetAddress" class="col-md-2 col-form-label required">Street Address:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="streetAddress1" name="streetAddress1" placeholder="Street Address 1">
+                            <input type="text" class="form-control mt-2" id="streetAddress2" name="streetAddress2" placeholder="Street Address 2 (optional)">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="city" class="required">City</label>
+                            <input type="text" class="form-control" id="city" name="city">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="state" class="required">State</label>
+                            <input type="text" class="form-control" id="state" name="state">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="zipCode" class="required">Zip Code</label>
+                            <input type="text" class="form-control" id="zipCode" name="zipCode">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="country" class="required">Country</label>
+                            <select id="country" name="country" class="form-control" required>
+                                <option value="">Select</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="IN">India</option>
+                                <option value="AU">Australia</option>
+                                <option value="JP">Japan</option>
+                                <option value="ZW">Zimbabwe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="gstNo">GST No.</label>
+                            <input type="text" class="form-control" id="gstNo" name="gstNo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cinNo">CIN No.</label>
+                            <input type="text" class="form-control" id="cinNo" name="cinNo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Person -->
+            <div class="card mb-3">
+                <div class="card-header">Contact Person</div>
+                <div class="card-body" id="contactPersons">
+                    <div class="contactPersonGroup" id="contactPersonGroup1">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="contactPerson1">Contact Person 1:</label>
+                                <input type="text" class="form-control" id="contactPerson1" name="contactPerson[]">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="designation1">Designation:</label>
+                                <input type="text" class="form-control" id="designation1" name="designation[]">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="email1">E-mail ID:</label>
+                                <input type="email" class="form-control" id="email1" name="email[]">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-link add-contact" onclick="addContactPerson()">+ Add another contact person</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Information -->
+            <div class="card mb-3">
+                <div class="card-header">Additional Information</div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="clientSegment">Client Segment / Category:</label>
+                            <select class="form-control" id="clientSegment" name="clientSegment">
+                                <option value="new_client">New Client</option>
+                                <option value="existing">Existing Client</option>
+                                <option value="prospect">Prospect Client</option>
+                                <option value="lost_client">Lost Client</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="industry">Industry:</label>
+                            <select class="form-control" id="industry" name="industry">
+                                <option value="consumerProduct">Consumer Product</option>
+                                <option value="foodFeed">Food & Feed</option>
+                                <option value="cosmetic">Cosmetic</option>
+                                <option value="pharma">Pharma</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="productCategory">Product Category:</label>
+                            <select class="form-control" id="productCategory" name="productCategory">
+                                <option value="">Select a Category</option>
+                                <option value="textileFabricGarment">Textile - Fabric / Garment</option>
+                                <option value="textileAccessories">Textile Accessories</option>
+                                <option value="leatherLeatherProducts">Leather & Leather Products</option>
+                                <option value="footwear">Footwear</option>
+                                <option value="leatherAccessories">Leather Accessories</option>
+                                <option value="toys">Toys</option>
+                                <option value="packagingMaterial">Packaging Material</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="globalAccountManager">Global Account Manager:</label>
+                            <input type="text" class="form-control" id="globalAccountManager" name="globalAccountManager" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="keyAccountManager">Key Account Manager:</label>
+                            <input type="text" class="form-control" id="keyAccountManager" name="keyAccountManager" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="locationSalesManager">Location Sales Manager:</label>
+                            <input type="text" class="form-control" id="locationSalesManager" name="locationSalesManager" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="website">Website:</label>
+                            <input type="url" class="form-control" id="website" name="website">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="creditFacility">Credit Facility:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="creditFacilityYes" name="creditFacility" value="yes" onclick="toggleCreditDetails(true)">
+                                <label class="form-check-label" for="creditFacilityYes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="creditFacilityNo" name="creditFacility" value="no" onclick="toggleCreditDetails(false)" checked>
+                                <label class="form-check-label" for="creditFacilityNo">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4" id="creditDetails" style="display: none;">
+                            <label for="numberOfDays">Credit Terms</label>
+                            <input type="number" class="form-control" id="numberOfDays" name="numberOfDays" placeholder="Number of Days">
+                            <input type="number" class="form-control mt-2" id="creditAmount" name="creditAmount" placeholder="Credit Limit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attachments and Actions -->
+            <div class="card mb-3">
+                <div class="card-header">Attachments & Actions</div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>Protocol:</label>
+                            <label class="custom-file-upload">
+                                <input type="file" name="protocol" id="protocol"/>
+                                <i class="fa fa-cloud-upload-alt"></i>
+                            </label>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Document:</label>
+                            <label class="custom-file-upload">
+                                <input type="file" name="document" id="document"/>
+                                <i class="fa fa-cloud-upload-alt"></i>
+                            </label>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>GST:</label>
+                            <label class="custom-file-upload">
+                                <input type="file" name="gst" id="gst"/>
+                                <i class="fa fa-cloud-upload-alt"></i>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-custom btn-block">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript Libraries and Custom Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to toggle the display of the brands input field
+        function toggleBrandsInput(display) {
+            document.getElementById('brandsInput').style.display = display ? 'block' : 'none';
+        }
+
+        // Function to dynamically add contact person fields
+        function addContactPerson() {
+            var contactIndex = document.querySelectorAll('.contactPersonGroup').length + 1;
+            var newContactHTML = `
+                <div class="contactPersonGroup" id="contactPersonGroup${contactIndex}">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="contactPerson${contactIndex}">Contact Person ${contactIndex}:</label>
+                            <input type="text" class="form-control" id="contactPerson${contactIndex}" name="contactPerson[]">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="designation${contactIndex}">Designation:</label>
+                            <input type="text" class="form-control" id="designation${contactIndex}" name="designation[]">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="email${contactIndex}">E-mail ID:</label>
+                            <input type="email" class="form-control" id="email${contactIndex}" name="email[]">
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="remove-contact" onclick="removeContactPerson('contactPersonGroup${contactIndex}')"><i class="fas fa-minus-circle"></i> Remove</span>
+                    </div>
+                </div>`;
+            document.getElementById('contactPersons').innerHTML += newContactHTML;
+        }
