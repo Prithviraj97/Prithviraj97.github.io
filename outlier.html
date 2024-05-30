@@ -42,8 +42,8 @@
             padding: 6px 12px;
             cursor: pointer;
             border-radius: 4px;
-            margin-top: 5px;
-            width: 10px;
+            width: 100%;
+            text-align: center;
         }
         .custom-file-input {
             display: none;
@@ -99,6 +99,11 @@
         .highlight {
             background-color: #e7f1ff;
         }
+        .form-row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
 </head>
 <body>
@@ -127,9 +132,7 @@
                                 <!-- Add/remove client types as needed -->
                             </select>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
@@ -293,28 +296,34 @@
                 <div class="card-header">Attachments & Actions</div>
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label>Protocol:</label>
                             <label class="custom-file-upload">
                                 <input type="file" name="protocol" id="protocol"/>
                                 <i class="fa fa-cloud-upload-alt"></i>
                             </label>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label>Document:</label>
                             <label class="custom-file-upload">
                                 <input type="file" name="document" id="document"/>
                                 <i class="fa fa-cloud-upload-alt"></i>
                             </label>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label>GST:</label>
                             <label class="custom-file-upload">
                                 <input type="file" name="gst" id="gst"/>
                                 <i class="fa fa-cloud-upload-alt"></i>
                             </label>
                         </div>
-
+                        <div class="form-group col-md-4">
+                            <label>Pan Card:</label>
+                            <label class="custom-file-upload">
+                                <input type="file" name="panCard" id="panCard"/>
+                                <i class="fa fa-cloud-upload-alt"></i>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -360,3 +369,16 @@
                 </div>`;
             document.getElementById('contactPersons').innerHTML += newContactHTML;
         }
+        
+        // Function to remove contact person fields
+        function removeContactPerson(id) {
+            document.getElementById(id).remove();
+        }
+
+        // Function to toggle credit details
+        function toggleCreditDetails(show) {
+            document.getElementById('creditDetails').style.display = show ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
