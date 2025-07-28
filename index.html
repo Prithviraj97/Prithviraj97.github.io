@@ -66,7 +66,11 @@
                     <a href="http://scholar.google.com"><i class="fas fa-fw fa-graduation-cap fa-2x"></i></a>
                 </div>     
             </div>
+<<<<<<< HEAD
             <!-- <h5 class="h5">Actively Seeking opportunities to conduct innovative research as a PhD student.</h5> -->
+=======
+            <h5 class="h5">Actively Seeking opportunities to conduct innovative research as a PhD student or Visiting Researcher.</h5>
+>>>>>>> c3d91c8de88ecc42f7272a9c33e6472037349fb7
         </main>
 
         <section id="About">
@@ -125,78 +129,140 @@
 
         <section id="research">
             <h2>Teaching</h2>
-            <p>Courses I am teaching at McNeese State University for Fall 2024 semester:</p>
+            <p>Courses I am teaching following courses at McNeese State University:</p>
             <ul class="fa-ul ml-4">
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS180 - Intro to Computer Science I - Python Programming (1 Section)</li>    
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS281 - Intro to  Computer Science II - Java Programming(2 Sections)</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS282 - Object-Oriented Design - Advanced Java (1 Section)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 180 - Intro to Computer Science I - Python Programming (Fall 2024, Summer 2025)</li>    
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 281 - Intro to  Computer Science II - Java Programming(Fall 2024, Spring/Fall 2025)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 282 - Object-Oriented Design - Advanced Java (Fall 2024, Spring/Fall 2025)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 431 - Intro to Machine Learning (Fall 2025)</li>
             </ul>
         </section>
 
         <section id="Projects">
             <h2> Some Projects</h2>
             <!-- Add your project details here -->
-            <h3>Learning with a Limited Sample</h3>
-            <p>
-                As a final term paper for deep learning class offered at UL Lafayette, I conducted experimental analysis on the learning capability of various deep learning
-                based models like CNN, Compact Convolutional Transformers and Vision Transformers. The goal of the research was to understand the efficiency of larger 
-                deep neural networks for image classification tasks on various datasets like CIFAR-10, CIFAR-100, MNIST, Fashion-MNIST, and few other small datasets. The result showed that 
-                heavier deep neural networks like ViT, CCT are inefficient interms of accuracy and speed, while few layers deep CNN model can give significant accuracy as well as 
-                speed. It shows that modern deep neural networks are power and data hungry, and it is not always wise to implement heavier, multilayer neural networks for simple tasks. More 
-                details can be at <a href="https://github.com/Prithviraj97/CS598DeepLearning">this Github repo</a>.
+             <p class="projects-intro">
+                Here are a few selected projects that showcase my experience in deep learning, computer vision, NLP, and robotics. Each project involved hands-on implementation and experimentation.
             </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/limited_sample.png" alt="Learning with Limited Sample" class="project-image">
+                    <div class="project-content">
+                        <h3>Learning with Limited Sample</h3>
+                        <p>As a final term paper for deep learning class offered at UL Lafayette, I conducted experimental analysis on the learning capability of various deep learning
+                        based models like CNN, Compact Convolutional Transformers and Vision Transformers. The goal of the research was to understand the efficiency of larger 
+                        deep neural networks for image classification tasks on various datasets like CIFAR-10, CIFAR-100, MNIST, Fashion-MNIST, and few other small datasets. The result showed that 
+                        heavier deep neural networks like ViT, CCT are inefficient interms of accuracy and speed, while few layers deep CNN model can give significant accuracy as well as 
+                        speed. It shows that modern deep neural networks are power and data hungry, and it is not always wise to implement heavier, multilayer neural networks for simple tasks.</p>
+                        <a href="https://github.com/Prithviraj97/CS598DeepLearning" class="project-link">View Code</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/IMG_3220.jpeg" alt="Natural Language Processing and Image classification with Transformer" class="project-image">
+                    <div class ="project-content">
+                        <h3>Natural Language Processing and Image classification with Transformer</h3>
+                        <p>In this research, we seek to implement Transformer primarily for the NLP task, focused on Sentiment Analysis, and Language Translation. We performed language translation for English-to-French, English-to-Spanish,
+                        Portuguese-to-English. Our general transformer does a decent performance in language translation, and we get acceptable BLEU score, accuracy, and F1 measure for all three language translations. Our sentiment analysis task focused on question answering
+                        (Q-A), text classification, and Named Entity Recognition (NER). For the Q-A we can very exact match score of 78%, we got consistent training accuracy of 40% for the NER task. The hugging face transformer API performs wildly better than any present
+                        models for NLP tasks. We discuss the recently developed Switch Transformer, MobileViT. Our implementation task for Switch Transformer and MobilViT wasn’t successful as they have huge GPU power. We perform ViT tasks for image classification on
+                        CIFAR-10 with a test accuracy of 70% and top-5 accuracy of 97%. Paper and code can be found at <a href="https://github.com/Prithviraj97/NeuralNetworks">this GitHub repository</a>.</p>
+                    </div>
+                </div>
 
-            <h3>Natural Language Processing and Image classification with Transformer</h3>
-            <p>
-                In this research, we seek to implement Transformer primarily for the NLP task, focused
-                on Sentiment Analysis, and Language Translation. We performed language translation for English-to-French, English-to-Spanish,
-                Portuguese-to-English. Our general transformer does a decent performance in language translation, and we get acceptable BLEU
-                score, accuracy, and F1 measure for all three language translations. Our sentiment analysis task focused on question answering
-                (Q-A), text classification, and Named Entity Recognition (NER). For the Q-A we can very exact match score of 78%, we got
-                consistent training accuracy of 40% for the NER task. The hugging face transformer API performs wildly better than any present
-                models for NLP tasks. We discuss the recently developed Switch Transformer, MobileViT. Our implementation task for Switch
-                Transformer and MobilViT wasn’t successful as they have huge GPU power. We perform ViT tasks for image classification on
-                CIFAR-10 with a test accuracy of 70% and top-5 accuracy of 97%. Paper and code can be found at <a href="https://github.com/Prithviraj97/NeuralNetworks">this GitHub repository</a>.
-            </p>
+                <div class="project-card">
+                    <img src="images/robotic_arm.jpg" alt="Object Detection with Deep Reinforcement Learning" class="project-image">
+                    <div class="project-content">
+                        <h3>Object Detection with Deep Reinforcement Learning</h3>
+                        <p>The idea of creating a virtual agent that can follow our instructions and learn from it to do a task we want it to do is fascinating, and the same is the idea for using reinforcement learning in object-tracking problems. 
+                        We formulate the problem as a sequential decision-making process and the agent is equipped with a conventional object detector that detects the object and the agent is trained to make the detection result better. 
+                        In this paper, we experiment with using the dynamic method for object detection. Our detector, which uses VGG16 pre-trained on ImageNet as a base, is trained using the PASCAL VOC2012 dataset. 
+                        The agent takes more actions in transforming the bounding box and the reward accumulated. The AP and recall are best for an IoU threshold of 0.5 or lower. We get AP and recall of 36.68 and 59.0 respectively for the 'cat' class at IoU of 0.5. 
+                        In our experiment the AP and recall declines sharply for IoU threshold for IoU threshold [0.4, 0.5, 0.6, 0.7, 0.8]. <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf">PDF of the paper</a>.</p>
+                    </div>
+                </div>
 
-            <h3>Object Detection with Deep Reinforcement Learning</h3>
+                <div class="project-card">
+                    <img src="images/kaggle_housing.jpg" alt="Housing Price Prediction on Kaggle" class="project-image">
+                    <div class="project-content">
+                        <h3>Housing Price Prediction on Kaggle</h3>
+                        <p>In this paper, we will be summarizing our work on the Kaggle Housing Prediction competition. We used the D2L book as our reference worked on tuning the hyperparameters and observed the performance of our model. 
+                        The result of submission on Kaggle for official testing is RMSE. Our work on tuning the hyperparameters didn't necessarily bring any positive change. 
+                        We have also tried to answer and explain our model, variable standardization, layer count, and regularization. 
+                        The best performance our system reported was a training error of 0.126395 and, a valid error of 0.146429, but our chart showed that the model was underfitting. 
+                        We obtained a score of 0.15151 on our official submission on Kaggle ranking 1500th among all participants. <a href="https://Prithviraj97.github.io/kaggle_housing.pdf">Link to PDF</a>.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/ebp.jpg" alt="Error Backpropagation and predictive coding" class="project-image">
+                    <div class="project-content">
+                        <h3>Error Backpropagation and predictive coding</h3>
+                        <p>This is an implementation of Error Backpropagation (EBP) algorithm which is used in training artificial neural networks. In this research, I conducted comprehensive investigation in to
+                        bio-plausibility of the Backpropagation algorithm and deep neural networks. I also explored the  innovative applications of predictive coding and assembly calculus in designing a brain emulator that
+                        replicates the learning pattern of the human brain. This project was done as term project under the guidance of Dr. Anthony Maida.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/drillobotics.jpg" alt="Drillobotics: An Automated Drill Rig" class="project-image">
+                    <div class="project-content">
+                        <h3>Drillobotics: An Automated Drill Rig</h3>
+                        <p>In close collaboration with the Petroleum Engineering Department, we worked on design and implementation of an automated drill rig, design which is at the forefront of innovation. 
+                        We worked on integration of a diverse range of sensors into the rig's architecture which allowed us to get real-time data and perfrom analysis about the precision of the drilling. 
+                        The prototype design championed the automation in Oil field drilling operations. The project is owned by Petroleum Engineering Department at UL Lafayette.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/omnibot.jpg" alt="Omnidirectional Vision System for Continuous Obstacle Avoidance" class="project-image">
+                    <div class="project-content">
+                        <h3>Omnidirectional Vision System for Continuous Obstacle Avoidance</h3>
+                        <p>This project was capstone project for Electrical Engineering Undergraduates whom I pleasure to advise. We worked on building 360 degree vision using PAL360 camera 
+                        and Microsoft Kinetic Camera. We used ROS2 to program the Turtlebot to move from one location to another and avoid obstacle in the path if any. The Poster of the entire project 
+                        can be <a href="https://Prithviraj97.github.io/Omnibot%20Poster%20Final.pdf">found here</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <h3>Object Detection with Deep Reinforcement Learning</h3>
             <p>
                 The idea of creating a virtual agent that can follow our instructions and learn from it to do a task we want it to do is fascinating, and the same is the idea for using reinforcement learning in object-tracking problems. 
                 We formulate the problem as a sequential decision-making process and the agent is equipped with a conventional object detector that detects the object and the agent is trained to make the detection result better. 
                 In this paper, we experiment with using the dynamic method for object detection. Our detector, which uses VGG16 pre-trained on ImageNet as a base, is trained using the PASCAL VOC2012 dataset. 
                 The agent takes more actions in transforming the bounding box and the reward accumulated. The AP and recall are best for an IoU threshold of 0.5 or lower. We get AP and recall of 36.68 and 59.0 respectively for the 'cat' class at IoU of 0.5. 
                 In our experiment the AP and recall declines sharply for IoU threshold for IoU threshold [0.4, 0.5, 0.6, 0.7, 0.8]. <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf">PDF of the paper</a>.
-            </p>
+            </p> -->
 
-            <h3>Housing Price Prediction on Kaggle</h3>
+            <!-- <h3>Housing Price Prediction on Kaggle</h3>
             <p>
                 In this paper, we will be summarizing our work on the Kaggle Housing Prediction competition. We used the D2L book as our reference worked on tuning the hyperparameters and observed the performance of our model. 
                 The result of submission on Kaggle for official testing is RMSE. Our work on tuning the hyperparameters didn't necessarily bring any positive change. 
                 We have also tried to answer and explain our model, variable standardization, layer count, and regularization. 
                 The best performance our system reported was a training error of 0.126395 and, a valid error of 0.146429, but our chart showed that the model was underfitting. 
                 We obtained a score of 0.15151 on our official submission on Kaggle ranking 1500th among all participants. <a href="https://Prithviraj97.github.io/kaggle_housing.pdf">Link to PDF</a>.
-            </p>
+            </p> -->
 
-            <h3>Error Backpropagation and predicitve coding</h3>
+            <!-- <h3>Error Backpropagation and predicitve coding</h3>
             <p>
                 This is an implementation of Error Backpropagation (EBP) algorithm which is used in training artificial neural networks. In this research, I conducted comprehensive investigation in to
                 bio-plausibility of the Backpropagation algorithm and deep neural networks. I also explored the  innovative applications of predictive coding and assembly calculus in designing a brain emulator that
                 replicates the learning pattern of the human brain. This project was done as term project under the guidance of Dr. Anthony Maida.
-            </p>
+            </p> -->
 
-            <h3>Drillobotics: An Automated Drill Rig</h3>
+            <!-- <h3>Drillobotics: An Automated Drill Rig</h3>
             <p>
                 In close collaboration with the Petroleum Engineering Department, we worked on design and implementation of an automated drill rig, design which is at the forefront of innovation. 
                 We worked on integration of a diverse range of sensors into the rig's architecture which allowed us to get real-time data and perfrom analysis about the precision of the drilling. 
                 The prototype design championed the automation in Oil field drilling operations. The project is owned by Petroleum Engineering Department at UL Lafayette. 
-            </p>
+            </p> -->
 
-            <h3>Omnidirectional Vision System for Continuous Obstacle Avoidance</h3>
+            <!-- <h3>Omnidirectional Vision System for Continuous Obstacle Avoidance</h3>
             <p>
                 This project was capstone project for Electrical Engineering Undergraduates whom I pleasure to advise. We worked on building 360 degree vision using PAL360 camera 
                 and Microsoft Kinetic Camera. We used ROS2 to program the Turtlebot to move from one location to another and avoid obstacle in the path if any. The Poster of the entire project 
                 can be <a href="https://Prithviraj97.github.io/Omnibot%20Poster%20Final.pdf">found here</a>.
-            </p>
+            </p> -->
 
         </section>
         <section id="Thesis">
