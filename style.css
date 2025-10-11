@@ -279,7 +279,7 @@ footer p {
 h5 {
   /* font-weight: normal; Set the font weight to normal for body copy */
   align-items:flex-start;
-  color: darkred;
+  color: rgb(0, 130, 139);
 }
 main {
   display: flex;
