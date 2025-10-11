@@ -4,565 +4,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prithvi Raj Singh - PhD Candidate</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Prithvi Raj Singh</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- integrity="sha512-xyz" crossorigin="anonymous" -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <script src="lastUpdated.js" defer></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: #ffffff;
-            padding-top: 70px;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center; /* center on larger screens */
-            align-items: center;
-            height: 70px;
-            position: relative;
-        }
-
-        .nav-brand {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: #1a202c;
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-            margin: 0;
-        }
-
-        .nav-menu a {
-            color: #4a5568;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-            font-size: 0.95em;
-        }
-
-        .nav-menu a:hover {
-            color: #2b6cb0;
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-            background: transparent;
-            border: 0;
-            padding: 8px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #2d3748;
-            border-radius: 2px;
-            transition: transform 220ms ease, opacity 160ms linear;
-            display: block;
-        }
-
-        /* open state for hamburger */
-        .nav-toggle.open span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-        .nav-toggle.open span:nth-child(2) {
-            opacity: 0;
-        }
-        .nav-toggle.open span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            padding: 60px 0 40px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .profile-photo {
-            flex-shrink: 0;
-        }
-
-        .profile-photo img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #e2e8f0;
-        }
-
-        .header-content {
-            flex: 1;
-            text-align: left;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #4a5568;
-            margin-bottom: 20px;
-        }
-
-
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            align-items: center; /* vertically center icons and text */
-        }
-
-        .contact-links a {
-            color: #2b6cb0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-            display: inline-flex; /* ensure icon and text align */
-            align-items: center;
-            gap: 8px;
-            line-height: 1;
-        }
-
-        .contact-links i {
-            /* keep icons vertically centered and consistent */
-            line-height: 1;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .contact-links a:hover {
-            color: #1a4d8f;
-        }
-
-        .phd-notice {
-            background: #edf2f7;
-            border-left: 4px solid #2b6cb0;
-            padding: 20px;
-            margin: 40px 0;
-            border-radius: 4px;
-        }
-
-        .phd-notice p {
-            color: #2d3748;
-            font-size: 1.05em;
-        }
-
-        section {
-            margin: 60px 0;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            color: #1a202c;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        h3 {
-            font-size: 1.3em;
-            color: #2d3748;
-            margin: 25px 0 10px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            color: #4a5568;
-        }
-
-        ul {
-            margin: 15px 0 15px 25px;
-            color: #4a5568;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .project-card {
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .project-card h3 {
-            margin-top: 0;
-            color: #1a202c;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: #2b6cb0;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 10px;
-            transition: color 0.2s;
-        }
-
-        .project-link:hover {
-            color: #1a4d8f;
-        }
-
-        .experience-item {
-            margin-bottom: 30px;
-            padding-left: 20px;
-            border-left: 3px solid #e2e8f0;
-        }
-
-        .experience-item h3 {
-            margin-top: 0;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .tag-list li {
-            background: #edf2f7;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            color: #2d3748;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid #e2e8f0;
-            color: #718096;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 0 30px;
-            }
-
-            .header-content {
-                text-align: center;
-            }
-
-            .contact-links {
-                justify-content: center;
-            }
-
-            .profile-photo img {
-                width: 150px;
-                height: 150px;
-            }
-            /* Nav responsive adjustments */
-            .nav-container {
-                justify-content: space-between; /* put hamburger on right */
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: #ffffff;
-                flex-direction: column;
-                gap: 0;
-                display: none; /* hidden by default */
-                padding: 10px 20px;
-                border-bottom: 1px solid #e2e8f0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li {
-                padding: 10px 0;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-container">
-            <!-- <a href="#" class="nav-brand">Prithvi Raj Singh</a> -->
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#teaching">Teaching</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <div class="background-image"></div>
     <div class="container">
         <header>
-            <div class="profile-photo">
-                <img src="https://Prithviraj97.github.io/Prithvi1.jpg" alt="Prithvi Raj Singh">
-            </div>
-            <div class="header-content">
-                <h1>Prithvi Raj Singh</h1>
-                <p class="subtitle">Visiting Lecturer, Computer Science | McNeese State University</p>
-                <div class="contact-links">
-                    <a href="mailto:prithvirajsingh351@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>Email</a>
-                    <a href="https://github.com/Prithviraj97" target="_blank"><i
-                            class="fab fa-github fa-2x"></i>GitHub</a>
-                    <a href="#cv"><i class="fa fa-file" aria-hidden="true"></i>CV</a>
-                    <a href="https://scholar.google.com/citations?user=is01NgsAAAAJ&hl=en" target="_blank"><i
-                            class="fas fa-fw fa-graduation-cap fa-2x"></i>Google Scholar</a>
-                    <a href="http://linkedin.com/in/prithvi25/" target="_blank" title="LinkedIn"><i
-                            class="fab fa-linkedin fa-2x"></i>LinkedIn</a>
+            <!-- <img src="https://Prithviraj97.github.io/Prithvi1.jpg" alt="Prithvi Raj Singh" class="Photo">
+        <h1>Prithvi Raj Singh</h1>
+        <p>ML Research Engineer</p> -->
+            <nav>
+                <div class="nav-toggle" onclick="toggleNavMenu()">
+                        <div class="bar"></div>  
+                        <div class="bar"></div>
+                        <div class="bar"></div> 
+                        <div class="bar"></div>     
                 </div>
-            </div>
+
+                <ul class="nav-menu right">
+                    <li><a href="#">Home</a></li>
+                    <!-- <li><a href="#">Research</a></li> -->
+                    <li><a href="https://Prithviraj97.github.io/test.html" title="About">Research</a></li>
+                    <li><a href="https://Prithviraj97.github.io/hobby.html">Hobbies</a></li>
+                    <li><a href="https://Prithviraj97.github.io/blog.html">Blog Posts</a></li>
+                    <li><a href="https://Prithviraj97.github.io/publications.html">Publications</a></li>
+                    <!-- <li><a href="https://prithviraj97.github.io/Prithvi-Raj-Singh-Apple.pdf">CV</a></li> -->
+                    <!-- <li><a href="https://Prithviraj97.github.io/teach.html">Teaching</a></li> -->
+                </ul>
+            </nav>
+            <!-- <div class="header-content">  
+                <img src="https://Prithviraj97.github.io/Prithvi1.jpg" alt="Prithvi Raj Singh" class="Photo">
+                <h1>Prithvi Raj Singh</h1>
+                <p>ML Researcher and Software Engineer</p>
+                <div class="social-icons">
+                    <a href="https://github.com/your-github-username"  title="GitHub"><i class="fab fa-github"></i>GitHub</a>
+                    <a href="https://linkedin.com/in/your-linkedin-username" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                    <a href="https://datacamp.com/profile/your-datacamp-username" target="_blank" title="DataCamp"><i class="fab fa-python"></i>DataCamp</a>
+                    <a href="https://twitter.com/your-twitter-username" target="_blank" title="Twitter"><i class="fab fa-twitter"></i>Twitter</a>
+                </div>
+    
+            </div> -->
         </header>
 
-        <div class="phd-notice">
-            <p><strong>Seeking PhD Opportunities for Fall 2026</strong> — I am actively looking for PhD positions in
-                Computer Science and Engineering. If you believe I would be a strong fit for your program or lab, I
-                would greatly appreciate hearing from you.</p>
-        </div>
+        <main>
+            <img src="https://Prithviraj97.github.io/IMG_7983.jpeg" alt="Prithvi Raj Singh" class="Photo">
+            <h1>Prithvi Raj Singh</h1>
+            <p>Visiting Lecturer @MSU</p>
+            <div class="header-content"> 
+                <div class="social-icons">
+                    <a href="https://github.com/Prithviraj97"  title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="http://linkedin.com/in/prithvi25/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="https://www.datacamp.com/portfolio/prithvirajsingh358" target="_blank" title="DataCamp"><i class="fab fa-python fa-2x"></i></a>
+                    <a href="https://x.com/prithvi15573761?s=21&t=stOuEPf7YH2ymhivNip40Q" target="_blank" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="http://www.kaggle.com"><i class="fab fa-kaggle fa-2x"></i></a>
+                    <a href="http://scholar.google.com"><i class="fas fa-fw fa-graduation-cap fa-2x"></i></a>
+                </div>     
+            </div>
+            <h5 class="h5">Looking forward to joining a PhD program in Fall 2026. If you have a lead or you think I will be ideal candidate please let me know.
+                Your kindness will be highly appreciated. 💐
+            </h5>
+        </main>
 
-        <section id="about">
-            <h2>About</h2>
-            <p>I am currently a Visiting Lecturer in Computer Science at McNeese State University, where I teach
-                programming fundamentals and machine learning. My work bridges theoretical computer vision research with
-                practical applications in robotics and edge computing.</p>
+        <section id="About">
+            <h2>About Me</h2>
+            <p>Hi 🤚! I am Prithvi Raj Singh 🙂. I am currently a Visiting Lecturer of CS at McNeese State University. At McNeese I teach first and second year programming classess as well as 400-level Machine Learning class.
+                I've affinity towards topics related with Programming, Computer Vision, Robotics, Systems Design, Optimization (algorithmic or system-level).
+                I completed my Masters in Computer Science from University of Louisiana at
+                Lafayette. I was co-advised by <a href="https://userweb.ucs.louisiana.edu/~nrg0821/">Dr. Raju Gottumukkala</a>
+                and <a href="https://scholar.google.com/citations?user=yCwFNtMAAAAJ&hl=en">Dr. Anothy Maida.</a> </p>
+            <p>I finished my Undergraduate from McNeese State University majoring in Computer Science with Minor in Math. At McNeese I was President of ACM chapter and also served as a founding memeber of robotics club.
+                While I am not a
+                fitness freak, I value the importance of regular exercise
+                in mental and physical well-being of person, so I love to do physical activities like lifting weights,
+                running, yoga, and various other fitness exercises</p>
+            <p>I was born and raised in the southern part of Nepal in well known town 'Birgunj' in working-class family. I spent most of my childhood
+                in my ancestral village about 30 kilometers far from Birgunj.
+                I got my primary school education in my village and moved to town for secondary education. After
+                finishing highschool I travelled to the United States for further education
+                and career opportunities. I love teaching and sharing my knowledge with peers and juniors. I have also been told that I am a 
+                great advisor, motivator and co-worker 😉.
+            </p>
+        </section>
+        <section id="research">
+            <h2>Research Interests</h2>
+        
+            <p> As an avid explorer of the vast realm of machine learning (ML) algorithms, my research interests converge on the optimization of cutting-edge technologies in Computer Vision. 
+                I am particularly enthralled by the dynamic domains of 3D object tracking and detection, where I contribute to shaping perception systems for robots. During my tenure as a graduate student at UL Lafayette, 
+                I delved into the research and implementation of Vision Algorithms, focusing on the intricate task of tracking rapidly moving small objects in 3D-space. </p>
 
-            <p>I completed my MS in Computer Science at the University of Louisiana at Lafayette under the co-advisement
-                of <a href="https://userweb.ucs.louisiana.edu/~nrg0821/">Dr. Raju Gottumukkala</a> and <a
-                    href="https://scholar.google.com/citations?user=yCwFNtMAAAAJ&hl=en">Dr. Anthony S. Maida.</a>,
-                focusing on real-time object detection and tracking of fast-moving small objects. Prior to that, I
-                earned my BS in Computer Science with a minor in Mathematics from McNeese State University, where I
-                served as President of the ACM chapter and founding member of the robotics club.</p>
-
-            <p>Originally from Birgunj, Nepal, I grew up in a working-class family and spent much of my childhood in my
-                ancestral village. After completing secondary education, I came to the United States to pursue higher
-                education and research opportunities.</p>
+              <p>My curiosity extends beyond theoretical pursuits, as I am fascinated by the practical challenges posed by real-world applications. 
+                I am passionate about optimizing computer vision algorithms to ensure seamless operations on compact edge devices such as Jetson TX and Raspberry Pi. 
+                While contemporary Vision Algorithms excel in detecting and tracking larger, slower-moving objects, they often stumble when it comes to accurately localizing fast-moving, smaller entities like a racquetball. 
+                The erratic movements introduce challenges like motion blur and other complexities. </p>
+                
+                <p>My ambition lies in the relentless pursuit of solutions. I aspire to pioneer advancements in general Robotics perception system as well as improve 3D trajectory analysis of fast-moving tiny objects. 
+                To achieve this, I leverage physics-based motion models and delve into the uncharted territories of physics-based deep neural networks. Through my research, I aim to bridge 
+                the gap between theoretical innovations and practical implementations, ushering in a new era of precision and efficiency in Computer Vision for real-world scenarios. </p>
+        
+            <p>While at UL Lafayette, I also worked as a Software Engineering Research Associate for Louisiana
+                Transportation Research Center (LTRC). I helped various Researchers and GeoTech Engineers with implementation of their
+                idea in to usable Software primarily using VB and C# on .NET framework. I am greatly fond of Software Engineering principles and love coding, and learning new
+                tech stack. 
+            </p>
+            <p>To summarize my research interests:</p>
+            <ul class="fa-ul ml-4">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Robotics (Planning and Perception System) </li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>3D Computer Vision (Object tracking and trajectory forecasting)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Optimization of Algorithms for Edge Devices</li> 
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Physics Inspired Deep Neural Network for Object Tracking</li>  
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Reinforcement Learning</li> 
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Machine Learning for TinyML</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Computational Science (AI for Natural Sciences)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Other intersections of DL with applications to CV, NLP, Algorithms.</li>
+            </ul>
         </section>
 
         <section id="research">
-            <h2>Research Interests</h2>
-            <p>My research focuses on advancing computer vision algorithms for robotics applications, particularly in
-                challenging scenarios involving fast-moving small objects. I work at the intersection of classical
-                computer vision, deep learning, and physics-informed models to create robust perception systems that
-                operate efficiently on edge devices.</p>
-
-            <h3>Primary Areas</h3>
-            <ul class="tag-list">
-                <li>3D Computer Vision</li>
-                <li>Object Tracking & Detection</li>
-                <li>Robotics Perception</li>
-                <li>Edge Computing & TinyML</li>
-                <li>Physics-Informed Neural Networks</li>
-                <li>Reinforcement Learning</li>
-            </ul>
-
-            <p>During my graduate work, I developed novel approaches to tracking rapidly moving small objects in 3D
-                space using RGB-D cameras. This work addressed fundamental challenges in motion blur and localization
-                accuracy that existing algorithms struggle with. I am passionate about making advanced vision algorithms
-                practical and deployable on resource-constrained devices like Jetson TX and Raspberry Pi.</p>
-        </section>
-
-        <section id="teaching">
             <h2>Teaching</h2>
-            <p>At McNeese State University, I teach courses spanning from introductory programming to advanced machine
-                learning:</p>
-
-            <div class="experience-item">
-                <h3>Current Courses</h3>
-                <ul>
-                    <li><strong>CS 180</strong> - Introduction to Computer Science I (Python)</li>
-                    <li><strong>CS 281</strong> - Introduction to Computer Science II (Java)</li>
-                    <li><strong>CS 282</strong> - Object-Oriented Design (Advanced Java)</li>
-                    <li><strong>CS 431</strong> - Introduction to Machine Learning</li>
-                </ul>
-            </div>
+            <p>Courses I am teaching following courses at McNeese State University:</p>
+            <ul class="fa-ul ml-4">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 180 - Intro to Computer Science I - Python Programming (Fall 2024, Summer 2025)</li>    
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 281 - Intro to  Computer Science II - Java Programming(Fall 2024, Spring/Fall 2025)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 282 - Object-Oriented Design - Advanced Java (Fall 2024, Spring/Fall 2025)</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>CS 431 - Intro to Machine Learning (Fall 2025)</li>
+            </ul>
         </section>
 
-        <section id="projects">
-            <h2>Selected Projects</h2>
+        <section id="Projects">
+            <h2> Some Projects</h2>
+            <!-- Add your project details here -->
+             <p class="projects-intro">
+                Here are a few selected projects that showcase my experience in deep learning, computer vision, NLP, and robotics. Each project involved hands-on implementation and experimentation.
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/limited_sample.png" alt="Learning with Limited Sample" class="project-image">
+                    <div class="project-content">
+                        <h3>Learning with Limited Sample</h3>
+                        <p>As a final term paper for deep learning class offered at UL Lafayette, I conducted experimental analysis on the learning capability of various deep learning
+                        based models like CNN, Compact Convolutional Transformers and Vision Transformers. The goal of the research was to understand the efficiency of larger 
+                        deep neural networks for image classification tasks on various datasets like CIFAR-10, CIFAR-100, MNIST, Fashion-MNIST, and few other small datasets. The result showed that 
+                        heavier deep neural networks like ViT, CCT are inefficient interms of accuracy and speed, while few layers deep CNN model can give significant accuracy as well as 
+                        speed. It shows that modern deep neural networks are power and data hungry, and it is not always wise to implement heavier, multilayer neural networks for simple tasks.</p>
+                        <a href="https://github.com/Prithviraj97/CS598DeepLearning" class="project-link">View Code</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/IMG_3220.jpeg" alt="Natural Language Processing and Image classification with Transformer" class="project-image">
+                    <div class ="project-content">
+                        <h3>Natural Language Processing and Image classification with Transformer</h3>
+                        <p>In this research, we seek to implement Transformer primarily for the NLP task, focused on Sentiment Analysis, and Language Translation. We performed language translation for English-to-French, English-to-Spanish,
+                        Portuguese-to-English. Our general transformer does a decent performance in language translation, and we get acceptable BLEU score, accuracy, and F1 measure for all three language translations. Our sentiment analysis task focused on question answering
+                        (Q-A), text classification, and Named Entity Recognition (NER). For the Q-A we can very exact match score of 78%, we got consistent training accuracy of 40% for the NER task. The hugging face transformer API performs wildly better than any present
+                        models for NLP tasks. We discuss the recently developed Switch Transformer, MobileViT. Our implementation task for Switch Transformer and MobilViT wasn’t successful as they have huge GPU power. We perform ViT tasks for image classification on
+                        CIFAR-10 with a test accuracy of 70% and top-5 accuracy of 97%. Paper and code can be found at <a href="https://github.com/Prithviraj97/NeuralNetworks">this GitHub repository</a>.</p>
+                    </div>
+                </div>
 
-            <div class="project-card">
-                <h3>MS Thesis: Real-time Object Tracking of Fast-moving Small Objects</h3>
-                <p>Developed novel tracking algorithms combining Kalman filtering with kinematic models to detect and
-                    track fast-moving small objects in 3D space using RGB-D cameras. Experimented with YOLOv5-8 and
-                    various single/multi-stage detectors. Results demonstrated significant improvements in tracking
-                    accuracy for challenging scenarios with motion blur.</p>
-                <a href="https://www.proquest.com/docview/3073043126" class="project-link" target="_blank">View Thesis
-                    →</a>
+                <div class="project-card">
+                    <img src="images/robotic_arm.jpg" alt="Object Detection with Deep Reinforcement Learning" class="project-image">
+                    <div class="project-content">
+                        <h3>Object Detection with Deep Reinforcement Learning</h3>
+                        <p>The idea of creating a virtual agent that can follow our instructions and learn from it to do a task we want it to do is fascinating, and the same is the idea for using reinforcement learning in object-tracking problems. 
+                        We formulate the problem as a sequential decision-making process and the agent is equipped with a conventional object detector that detects the object and the agent is trained to make the detection result better. 
+                        In this paper, we experiment with using the dynamic method for object detection. Our detector, which uses VGG16 pre-trained on ImageNet as a base, is trained using the PASCAL VOC2012 dataset. 
+                        The agent takes more actions in transforming the bounding box and the reward accumulated. The AP and recall are best for an IoU threshold of 0.5 or lower. We get AP and recall of 36.68 and 59.0 respectively for the 'cat' class at IoU of 0.5. 
+                        In our experiment the AP and recall declines sharply for IoU threshold for IoU threshold [0.4, 0.5, 0.6, 0.7, 0.8]. <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf">PDF of the paper</a>.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/kaggle_housing.jpg" alt="Housing Price Prediction on Kaggle" class="project-image">
+                    <div class="project-content">
+                        <h3>Housing Price Prediction on Kaggle</h3>
+                        <p>In this paper, we will be summarizing our work on the Kaggle Housing Prediction competition. We used the D2L book as our reference worked on tuning the hyperparameters and observed the performance of our model. 
+                        The result of submission on Kaggle for official testing is RMSE. Our work on tuning the hyperparameters didn't necessarily bring any positive change. 
+                        We have also tried to answer and explain our model, variable standardization, layer count, and regularization. 
+                        The best performance our system reported was a training error of 0.126395 and, a valid error of 0.146429, but our chart showed that the model was underfitting. 
+                        We obtained a score of 0.15151 on our official submission on Kaggle ranking 1500th among all participants. <a href="https://Prithviraj97.github.io/kaggle_housing.pdf">Link to PDF</a>.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/ebp.jpg" alt="Error Backpropagation and predictive coding" class="project-image">
+                    <div class="project-content">
+                        <h3>Error Backpropagation and predictive coding</h3>
+                        <p>This is an implementation of Error Backpropagation (EBP) algorithm which is used in training artificial neural networks. In this research, I conducted comprehensive investigation in to
+                        bio-plausibility of the Backpropagation algorithm and deep neural networks. I also explored the  innovative applications of predictive coding and assembly calculus in designing a brain emulator that
+                        replicates the learning pattern of the human brain. This project was done as term project under the guidance of Dr. Anthony Maida.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/drillobotics.jpg" alt="Drillobotics: An Automated Drill Rig" class="project-image">
+                    <div class="project-content">
+                        <h3>Drillobotics: An Automated Drill Rig</h3>
+                        <p>In close collaboration with the Petroleum Engineering Department, we worked on design and implementation of an automated drill rig, design which is at the forefront of innovation. 
+                        We worked on integration of a diverse range of sensors into the rig's architecture which allowed us to get real-time data and perfrom analysis about the precision of the drilling. 
+                        The prototype design championed the automation in Oil field drilling operations. The project is owned by Petroleum Engineering Department at UL Lafayette.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/omnibot.jpg" alt="Omnidirectional Vision System for Continuous Obstacle Avoidance" class="project-image">
+                    <div class="project-content">
+                        <h3>Omnidirectional Vision System for Continuous Obstacle Avoidance</h3>
+                        <p>This project was capstone project for Electrical Engineering Undergraduates whom I pleasure to advise. We worked on building 360 degree vision using PAL360 camera 
+                        and Microsoft Kinetic Camera. We used ROS2 to program the Turtlebot to move from one location to another and avoid obstacle in the path if any. The Poster of the entire project 
+                        can be <a href="https://Prithviraj97.github.io/Omnibot%20Poster%20Final.pdf">found here</a>.</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="project-card">
-                <h3>Object Detection with Deep Reinforcement Learning</h3>
-                <p>Formulated object detection as a sequential decision-making process where an RL agent refines
-                    bounding box predictions. Trained on PASCAL VOC2012 using VGG16 backbone, achieving AP of 36.68 and
-                    recall of 59.0 for IoU threshold of 0.5.</p>
-                <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf" class="project-link"
-                    target="_blank">Read Paper →</a>
-            </div>
+            <!-- <h3>Object Detection with Deep Reinforcement Learning</h3>
+            <p>
+                The idea of creating a virtual agent that can follow our instructions and learn from it to do a task we want it to do is fascinating, and the same is the idea for using reinforcement learning in object-tracking problems. 
+                We formulate the problem as a sequential decision-making process and the agent is equipped with a conventional object detector that detects the object and the agent is trained to make the detection result better. 
+                In this paper, we experiment with using the dynamic method for object detection. Our detector, which uses VGG16 pre-trained on ImageNet as a base, is trained using the PASCAL VOC2012 dataset. 
+                The agent takes more actions in transforming the bounding box and the reward accumulated. The AP and recall are best for an IoU threshold of 0.5 or lower. We get AP and recall of 36.68 and 59.0 respectively for the 'cat' class at IoU of 0.5. 
+                In our experiment the AP and recall declines sharply for IoU threshold for IoU threshold [0.4, 0.5, 0.6, 0.7, 0.8]. <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf">PDF of the paper</a>.
+            </p> -->
 
-            <div class="project-card">
-                <h3>Learning with Limited Samples</h3>
-                <p>Conducted experimental analysis comparing CNNs, Compact Convolutional Transformers, and Vision
-                    Transformers on image classification with limited data. Results showed that lighter CNN models
-                    significantly outperformed heavier architectures like ViT in both accuracy and speed for small
-                    datasets (CIFAR-10, CIFAR-100, MNIST).</p>
-                <a href="https://github.com/Prithviraj97/CS598DeepLearning" class="project-link" target="_blank">View
-                    Code →</a>
-            </div>
+            <!-- <h3>Housing Price Prediction on Kaggle</h3>
+            <p>
+                In this paper, we will be summarizing our work on the Kaggle Housing Prediction competition. We used the D2L book as our reference worked on tuning the hyperparameters and observed the performance of our model. 
+                The result of submission on Kaggle for official testing is RMSE. Our work on tuning the hyperparameters didn't necessarily bring any positive change. 
+                We have also tried to answer and explain our model, variable standardization, layer count, and regularization. 
+                The best performance our system reported was a training error of 0.126395 and, a valid error of 0.146429, but our chart showed that the model was underfitting. 
+                We obtained a score of 0.15151 on our official submission on Kaggle ranking 1500th among all participants. <a href="https://Prithviraj97.github.io/kaggle_housing.pdf">Link to PDF</a>.
+            </p> -->
 
-            <div class="project-card">
-                <h3>Transformer-based NLP and Vision</h3>
-                <p>Implemented transformers for sentiment analysis, language translation (English-French,
-                    English-Spanish, Portuguese-English), and image classification. Achieved 78% exact match on question
-                    answering and 70% test accuracy on CIFAR-10 with Vision Transformers.</p>
-                <a href="https://github.com/Prithviraj97/NeuralNetworks" class="project-link" target="_blank">View
-                    Repository →</a>
-            </div>
+            <!-- <h3>Error Backpropagation and predicitve coding</h3>
+            <p>
+                This is an implementation of Error Backpropagation (EBP) algorithm which is used in training artificial neural networks. In this research, I conducted comprehensive investigation in to
+                bio-plausibility of the Backpropagation algorithm and deep neural networks. I also explored the  innovative applications of predictive coding and assembly calculus in designing a brain emulator that
+                replicates the learning pattern of the human brain. This project was done as term project under the guidance of Dr. Anthony Maida.
+            </p> -->
 
-            <div class="project-card">
-                <h3>Drillobotics: Automated Drill Rig</h3>
-                <p>Collaborated with the Petroleum Engineering Department to design an automated drill rig prototype.
-                    Integrated multiple sensors for real-time precision analysis and championed automation in oil field
-                    drilling operations.</p>
-            </div>
+            <!-- <h3>Drillobotics: An Automated Drill Rig</h3>
+            <p>
+                In close collaboration with the Petroleum Engineering Department, we worked on design and implementation of an automated drill rig, design which is at the forefront of innovation. 
+                We worked on integration of a diverse range of sensors into the rig's architecture which allowed us to get real-time data and perfrom analysis about the precision of the drilling. 
+                The prototype design championed the automation in Oil field drilling operations. The project is owned by Petroleum Engineering Department at UL Lafayette. 
+            </p> -->
 
-            <div class="project-card">
-                <h3>Bidirectional Autonomous Robot</h3>
-                <p>Built a bidirectional robot from scratch implementing BFS for optimal path planning. The robot used
-                    ultrasonic and lidar sensors for obstacle detection and dynamic path recomputation.</p>
-                <a href="https://github.com/Prithviraj97/Servitor" class="project-link" target="_blank">View Repository
-                    →</a>
-            </div>
+            <!-- <h3>Omnidirectional Vision System for Continuous Obstacle Avoidance</h3>
+            <p>
+                This project was capstone project for Electrical Engineering Undergraduates whom I pleasure to advise. We worked on building 360 degree vision using PAL360 camera 
+                and Microsoft Kinetic Camera. We used ROS2 to program the Turtlebot to move from one location to another and avoid obstacle in the path if any. The Poster of the entire project 
+                can be <a href="https://Prithviraj97.github.io/Omnibot%20Poster%20Final.pdf">found here</a>.
+            </p> -->
+
+        </section>
+        <section id="Thesis">
+            <h2>Thesis</h2>
+            <h4>MS Thesis: Real-time Object Detection and Tracking of Fast-moving Small Objects using RGB-D camera and Computer Vision Technicques.</h4>
+            <p>
+                The thesis explores the use of stereo camera for detection and tracking of fast-moving small objects in 3D space. Several Object  Detection and Tracking
+                algorithms were experimented. For Object Detection modern YOLO algorithms like YOLOv5, YOLOv7, YOLOv8 as well other mutli and single stage detectors were used.
+                We implemented Kalman Filter based algorithms for the tracking purpose. After several experiments with the state-of-the-art models, the results were unsatisfactory 
+                so I worked on augmenting the use of Kinematics to design new tracking system that can enhance the tracking and trajectory forecasting of fast-moving tiny objects. More details can 
+                be found at: https://www.proquest.com/docview/3073043126
+            </p>
+            <h4>Undergraduate Capstone Project: Bidirectional autonomous robot for optimal path planning. </h4>
+            <p>
+                Me and my friend <strong>'Blake Drost'</strong> worked on building small robot from scratch, that could traverse in forward or backward direction to find the optimal path to reach the target.
+                We implemented breadth first search (BFS) algorithm which the robot used to find the optimal path before making move towards the target. The robot had multiple ultrasonic and small lidar sensors
+                to detect obstacle in the path. If there were obstacle in the optimal path the robot would try to avoid it and if nothing works it will compute new optimal path from the current position
+                and traverse towards that position. More details can be found in our <a href="https://github.com/Prithviraj97/Servitor">github repository</a>.
+            </p>
+
+            <h5>Some more Projects related to Exploratory Data Analysis (EDA), Machine Learning can be found on github page. Will continue to add more projects when i get time.</h5>
         </section>
 
-        <section id="experience">
-            <h2>Professional Experience</h2>
-
-            <div class="experience-item">
-                <h3>Visiting Lecturer — McNeese State University</h3>
-                <p><em>Since Aug 2024</em></p>
-                <p>Teaching introductory and advanced programming courses (Python, Java) as well as machine learning.
-                    Developing course materials, assignments, and exams. Providing mentorship and support to students.
-                </p>
-            </div>
-
-            <div class="experience-item">
-                <h3>Research Associate — Louisiana Transportation Research Center (LTRC)</h3>
-                <p><em>2 years</em></p>
-                <p>Developed software solutions for transportation researchers and geotechnical engineers using VB.NET
-                    and C#. Led development of GeoTechPileCPT software for the Louisiana Department of Transportation.
-                    Gained expertise in ASP.NET, Azure DevOps, and Windows/Web application development.</p>
-            </div>
-
-            <div class="experience-item">
-                <h3>Research Assistant — Cyber-Physical and Human Systems Lab</h3>
-                <p>Designed and implemented computer vision algorithms for small object tracking in 3D space. Conducted
-                    literature reviews, developed technical papers, and worked extensively with time series prediction,
-                    feature engineering, and data visualization tools.</p>
-            </div>
-        </section>
-
-        <section id="software">
+        <section id="Thesis">
             <h2>Software Developed</h2>
-            <p><strong>GeoTechPileCPT</strong> — Designed for the Louisiana Department of Transportation under Federal
-                Highway Commission funding. Used for geotechnical analysis and pile foundation design.</p>
-            <a href="https://www.ltrc.lsu.edu/research_products.html" class="project-link" target="_blank">Download from
-                LTRC →</a>
+            <p>The <strong>GeoTechPileCPT</strong>Software was designed for the Louisiana Dept. of Transportation Development under funding from the Federal Highway Commission. You can download from LTRC's official page.</p>
+            <p><a href="https://www.ltrc.lsu.edu/research_products.html">GeoTechPileCPT</a></p>
+
+            <p><strong>MTS Checker</strong>. The software is written in VB.NET and it helps LTRC researchers convert the raw data into usable .txt or excel format. The software is also able to perform data analysis with excel.</p>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>I'm always open to discussing research opportunities, collaborations, or PhD positions.</p>
-            <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://github.com/Prithviraj97" target="_blank">GitHub</a>
-                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
-                <a href="#cv">Download CV</a> 
-            </div>
+        <section id="research">
+            <h2>Academic and Professional Experience</h2>
+            <p>I worked as a Associate Software Engineer for LTRC for two years maintaining and working on few features, mathematical implementation. We used VB.NET but often we would write code in C# 
+                and convert in to VB using Microsoft inbuilt feature in Visual Studio. Some things I learned working there are:
+                <ul>
+                    <li>Object Oriented Programming in Python, Java, C#, Visual Basic</li>
+                    <li>ASP.NET</li>
+                    <li>Creating Windows Form Application and Web Application</li>
+                    <li>Implementing mathematical equations in a program</li>
+                    <li>Deploying and integrating new features via Azure DevOps</li>
+                    <li>Communicating implementation and design with reseachers and engineers.</li>
+                    <li>Presentation and Training</li>
+                    <li>Data Manipulation and Analysis in Excel with VBA</li>
+                </ul>
+            </p>
+            <p>I also worked as RA for Cyber-Physical and Human Systems Lab where I worked mostly on design and implementation of computer vision algorithms for 
+                small object tracking in 3D space. I played with a lots of cool tools. Some knowledge i gained are:
+                <ul>
+                    <li>Literature Review</li>
+                    <li>Applied Machine Learning (Clustering, Regression, PCA, SVM, KNN)</li>
+                    <li>Writing proper technical paper and report.</li>
+                    <li>Data Importing, Cleaning, Analysis and Wrangling</li>
+                    <li>Data Visualization - seaborn, matplot, plotly, ggplot, dplyr</li>
+                    <li>Feature Engineering</li>
+                    <li>Time Series Prediction</li>
+                    <li>Computer Vision Algorithms, Image processing</li>
+                    <li>Programming on Linux platform</li>
+                </ul>
+            </p>
         </section>
 
-        <!-- <footer>
-            <p>© 2024 Prithvi Raj Singh. Last updated October 2024.</p>
-        </footer> -->
+       <!-- <section id="references">
+            <h2>References</h2>
+            
+            <ul>
+                <li>
+                    <strong>Dr. Raju Gottumukkala</strong>
+                    <p>Associate Professor, Department of Mechanical Engineering</p>
+                    <p>Director, Informatics Research Institute</p>
+                    <p>Contact: raju@louisiana.edu</p>
+                </li>
+                <li>
+                    <strong>Dr. Anthony Maida</strong>
+                    <p>Associate Professor</p>
+                    <p>Center for Advanced Computing Studies</p>
+                    <p>Contact: maida@louisiana.edu</p>
+                </li>
+                <li>
+                    <strong>Dr. Catherine Anderson </strong>
+                    <p>Professor Emeritus, Dept. of Computer Science and Engineering</p>
+                    <p>Director, McNeese Robotics Lab</p>
+                    <p>Contact: canderson@mcneese.edu</p>
+                </li>
+                <li>
+                    <strong>Dr. Alan B Barhorst </strong>
+                    <p>Professor, Dept. of Mechanical Engineering</p>
+                    <p>Department Chair</p>
+                    <p>Contact: alan.barhorst@louisiana.edu</p>
+                </li>
+            </ul>
+        </section> -->
+
         <footer>
             <p id="last-updated">Last Updated: <span id="last-updated-date"></span></p>
             <p>Website under construction</p>
@@ -571,47 +362,10 @@
             </div>
         </footer>
     </div>
-    <script>
-    // Mobile menu toggle
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    function toggleMobileMenu() {
-        const isOpen = navMenu.classList.toggle('active');
-        navToggle.classList.toggle('open', isOpen);
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }
-
-    navToggle.addEventListener('click', toggleMobileMenu);
-
-    // Close menu when clicking on a link (mobile behavior)
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-</script>
-<script src="script.js"></script> 
+    <script src="script.js"></script> 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-xyz" crossorigin="anonymous"></script> 
+
+
 </body>
 
 </html>
