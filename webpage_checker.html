@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prithvi Raj Singh - PhD Candidate</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- integrity="sha512-xyz" crossorigin="anonymous" -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <script src="lastUpdated.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+            padding-top: 70px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center; /* center on larger screens */
+            align-items: center;
+            height: 70px;
+            position: relative;
+        }
+
+        .nav-brand {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1a202c;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95em;
+        }
+
+        .nav-menu a:hover {
+            color: #2b6cb0;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            background: transparent;
+            border: 0;
+            padding: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #2d3748;
+            border-radius: 2px;
+            transition: transform 220ms ease, opacity 160ms linear;
+            display: block;
+        }
+
+        /* open state for hamburger */
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e2e8f0;
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            align-items: center; /* vertically center icons and text */
+        }
+
+        .contact-links a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: inline-flex; /* ensure icon and text align */
+            align-items: center;
+            gap: 8px;
+            line-height: 1;
+        }
+
+        .contact-links i {
+            /* keep icons vertically centered and consistent */
+            line-height: 1;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .contact-links a:hover {
+            color: #1a4d8f;
+        }
+
+        .phd-notice {
+            background: #edf2f7;
+            border-left: 4px solid #2b6cb0;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .phd-notice p {
+            color: #2d3748;
+            font-size: 1.05em;
+        }
+
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #1a202c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin: 25px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+
+        ul {
+            margin: 15px 0 15px 25px;
+            color: #4a5568;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .project-card {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #1a202c;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: color 0.2s;
+        }
+
+        .project-link:hover {
+            color: #1a4d8f;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .experience-item h3 {
+            margin-top: 0;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .tag-list li {
+            background: #edf2f7;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0 30px;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+
+            .contact-links {
+                justify-content: center;
+            }
+
+            .profile-photo img {
+                width: 150px;
+                height: 150px;
+            }
+            /* Nav responsive adjustments */
+            .nav-container {
+                justify-content: space-between; /* put hamburger on right */
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                flex-direction: column;
+                gap: 0;
+                display: none; /* hidden by default */
+                padding: 10px 20px;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <!-- <a href="#" class="nav-brand">Prithvi Raj Singh</a> -->
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <div class="profile-photo">
+                <img src="https://Prithviraj97.github.io/Prithvi1.jpg" alt="Prithvi Raj Singh">
+            </div>
+            <div class="header-content">
+                <h1>Prithvi Raj Singh</h1>
+                <p class="subtitle">Visiting Lecturer, Computer Science | McNeese State University</p>
+                <div class="contact-links">
+                    <a href="mailto:prithvirajsingh351@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>Email</a>
+                    <a href="https://github.com/Prithviraj97" target="_blank"><i
+                            class="fab fa-github fa-2x"></i>GitHub</a>
+                    <a href="#cv"><i class="fa fa-file" aria-hidden="true"></i>CV</a>
+                    <a href="https://scholar.google.com/citations?user=is01NgsAAAAJ&hl=en" target="_blank"><i
+                            class="fas fa-fw fa-graduation-cap fa-2x"></i>Google Scholar</a>
+                    <a href="http://linkedin.com/in/prithvi25/" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin fa-2x"></i>LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="phd-notice">
+            <p><strong>Seeking PhD Opportunities for Fall 2026</strong> — I am actively looking for PhD positions in
+                Computer Science and Engineering. If you believe I would be a strong fit for your program or lab, I
+                would greatly appreciate hearing from you.</p>
+        </div>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>I am currently a Visiting Lecturer in Computer Science at McNeese State University, where I teach
+                programming fundamentals and machine learning. My work bridges theoretical computer vision research with
+                practical applications in robotics and edge computing.</p>
+
+            <p>I completed my MS in Computer Science at the University of Louisiana at Lafayette under the co-advisement
+                of <a href="https://userweb.ucs.louisiana.edu/~nrg0821/">Dr. Raju Gottumukkala</a> and <a
+                    href="https://scholar.google.com/citations?user=yCwFNtMAAAAJ&hl=en">Dr. Anthony S. Maida.</a>,
+                focusing on real-time object detection and tracking of fast-moving small objects. Prior to that, I
+                earned my BS in Computer Science with a minor in Mathematics from McNeese State University, where I
+                served as President of the ACM chapter and founding member of the robotics club.</p>
+
+            <p>Originally from Birgunj, Nepal, I grew up in a working-class family and spent much of my childhood in my
+                ancestral village. After completing secondary education, I came to the United States to pursue higher
+                education and research opportunities.</p>
+        </section>
+
+        <section id="research">
+            <h2>Research Interests</h2>
+            <p>My research focuses on advancing computer vision algorithms for robotics applications, particularly in
+                challenging scenarios involving fast-moving small objects. I work at the intersection of classical
+                computer vision, deep learning, and physics-informed models to create robust perception systems that
+                operate efficiently on edge devices.</p>
+
+            <h3>Primary Areas</h3>
+            <ul class="tag-list">
+                <li>3D Computer Vision</li>
+                <li>Object Tracking & Detection</li>
+                <li>Robotics Perception</li>
+                <li>Edge Computing & TinyML</li>
+                <li>Physics-Informed Neural Networks</li>
+                <li>Reinforcement Learning</li>
+            </ul>
+
+            <p>During my graduate work, I developed novel approaches to tracking rapidly moving small objects in 3D
+                space using RGB-D cameras. This work addressed fundamental challenges in motion blur and localization
+                accuracy that existing algorithms struggle with. I am passionate about making advanced vision algorithms
+                practical and deployable on resource-constrained devices like Jetson TX and Raspberry Pi.</p>
+        </section>
+
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <p>At McNeese State University, I teach courses spanning from introductory programming to advanced machine
+                learning:</p>
+
+            <div class="experience-item">
+                <h3>Current Courses</h3>
+                <ul>
+                    <li><strong>CS 180</strong> - Introduction to Computer Science I (Python)</li>
+                    <li><strong>CS 281</strong> - Introduction to Computer Science II (Java)</li>
+                    <li><strong>CS 282</strong> - Object-Oriented Design (Advanced Java)</li>
+                    <li><strong>CS 431</strong> - Introduction to Machine Learning</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Projects</h2>
+
+            <div class="project-card">
+                <h3>MS Thesis: Real-time Object Tracking of Fast-moving Small Objects</h3>
+                <p>Developed novel tracking algorithms combining Kalman filtering with kinematic models to detect and
+                    track fast-moving small objects in 3D space using RGB-D cameras. Experimented with YOLOv5-8 and
+                    various single/multi-stage detectors. Results demonstrated significant improvements in tracking
+                    accuracy for challenging scenarios with motion blur.</p>
+                <a href="https://www.proquest.com/docview/3073043126" class="project-link" target="_blank">View Thesis
+                    →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Object Detection with Deep Reinforcement Learning</h3>
+                <p>Formulated object detection as a sequential decision-making process where an RL agent refines
+                    bounding box predictions. Trained on PASCAL VOC2012 using VGG16 backbone, achieving AP of 36.68 and
+                    recall of 59.0 for IoU threshold of 0.5.</p>
+                <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf" class="project-link"
+                    target="_blank">Read Paper →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Learning with Limited Samples</h3>
+                <p>Conducted experimental analysis comparing CNNs, Compact Convolutional Transformers, and Vision
+                    Transformers on image classification with limited data. Results showed that lighter CNN models
+                    significantly outperformed heavier architectures like ViT in both accuracy and speed for small
+                    datasets (CIFAR-10, CIFAR-100, MNIST).</p>
+                <a href="https://github.com/Prithviraj97/CS598DeepLearning" class="project-link" target="_blank">View
+                    Code →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Transformer-based NLP and Vision</h3>
+                <p>Implemented transformers for sentiment analysis, language translation (English-French,
+                    English-Spanish, Portuguese-English), and image classification. Achieved 78% exact match on question
+                    answering and 70% test accuracy on CIFAR-10 with Vision Transformers.</p>
+                <a href="https://github.com/Prithviraj97/NeuralNetworks" class="project-link" target="_blank">View
+                    Repository →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Drillobotics: Automated Drill Rig</h3>
+                <p>Collaborated with the Petroleum Engineering Department to design an automated drill rig prototype.
+                    Integrated multiple sensors for real-time precision analysis and championed automation in oil field
+                    drilling operations.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Bidirectional Autonomous Robot</h3>
+                <p>Built a bidirectional robot from scratch implementing BFS for optimal path planning. The robot used
+                    ultrasonic and lidar sensors for obstacle detection and dynamic path recomputation.</p>
+                <a href="https://github.com/Prithviraj97/Servitor" class="project-link" target="_blank">View Repository
+                    →</a>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>Visiting Lecturer — McNeese State University</h3>
+                <p><em>Since Aug 2024</em></p>
+                <p>Teaching introductory and advanced programming courses (Python, Java) as well as machine learning.
+                    Developing course materials, assignments, and exams. Providing mentorship and support to students.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Research Associate — Louisiana Transportation Research Center (LTRC)</h3>
+                <p><em>2 years</em></p>
+                <p>Developed software solutions for transportation researchers and geotechnical engineers using VB.NET
+                    and C#. Led development of GeoTechPileCPT software for the Louisiana Department of Transportation.
+                    Gained expertise in ASP.NET, Azure DevOps, and Windows/Web application development.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Research Assistant — Cyber-Physical and Human Systems Lab</h3>
+                <p>Designed and implemented computer vision algorithms for small object tracking in 3D space. Conducted
+                    literature reviews, developed technical papers, and worked extensively with time series prediction,
+                    feature engineering, and data visualization tools.</p>
+            </div>
+        </section>
+
+        <section id="software">
+            <h2>Software Developed</h2>
+            <p><strong>GeoTechPileCPT</strong> — Designed for the Louisiana Department of Transportation under Federal
+                Highway Commission funding. Used for geotechnical analysis and pile foundation design.</p>
+            <a href="https://www.ltrc.lsu.edu/research_products.html" class="project-link" target="_blank">Download from
+                LTRC →</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>I'm always open to discussing research opportunities, collaborations, or PhD positions.</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://github.com/Prithviraj97" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                <a href="#cv">Download CV</a> 
+            </div>
+        </section>
+
+        <!-- <footer>
+            <p>© 2024 Prithvi Raj Singh. Last updated October 2024.</p>
+        </footer> -->
+        <footer>
+            <p id="last-updated">Last Updated: <span id="last-updated-date"></span></p>
+            <p>Website under construction</p>
+            <div class="copyright">
+                &copy; 2023 Prithvi Raj Singh. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    function toggleMobileMenu() {
+        const isOpen = navMenu.classList.toggle('active');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    navToggle.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when clicking on a link (mobile behavior)
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+<script src="script.js"></script> 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-xyz" crossorigin="anonymous"></script> 
+</body>
+
+</html>
