@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials & Notes - Prithvi Raj Singh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+            padding-top: 70px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-brand {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1a202c;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95em;
+        }
+
+        .nav-menu a:hover {
+            color: #2b6cb0;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #2d3748;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .filter-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9em;
+            color: #4a5568;
+        }
+
+        .filter-btn:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+        }
+
+        .filter-btn.active {
+            background: #2b6cb0;
+            color: white;
+            border-color: #2b6cb0;
+        }
+
+        .tutorials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .tutorial-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tutorial-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: white;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-header.ml {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .card-header.cv {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .card-header.algorithms {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .card-header.math {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .card-header.programming {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .card-header.robotics {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .card-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: #4a5568;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+            color: #718096;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #edf2f7;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: #2d3748;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 0.9em;
+        }
+
+        .btn-primary {
+            background: #2b6cb0;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1a4d8f;
+        }
+
+        .btn-secondary {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #718096;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                padding: 40px 0 30px;
+            }
+
+            .tutorials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: #ffffff;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                transition: left 0.3s;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                padding: 15px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .nav-menu a {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Prithvi Raj Singh</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Tutorials & Notes</h1>
+            <p class="subtitle">Handwritten notes, guides, and teaching materials on various CS topics</p>
+        </header>
+
+        <div class="filter-section">
+            <p style="color: #4a5568; margin-bottom: 10px;">Filter by topic:</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="filter-btn" data-filter="algorithms">Algorithms</button>
+                <button class="filter-btn" data-filter="math">Mathematics</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="robotics">Robotics</button>
+            </div>
+        </div>
+
+        <div class="tutorials-grid" id="tutorialsGrid">
+            <!-- Machine Learning Notes -->
+            <div class="tutorial-card" data-category="ml">
+                <div class="card-header ml">
+                    <div>
+                        <div class="card-icon">🤖</div>
+                        <h3 style="margin: 0; font-size: 1.1em;">Machine Learning</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Introduction to Neural Networks</h3>
+                    <p class="card-description">Comprehensive handwritten notes covering backpropagation, activation functions, and optimization techniques.</p>
+                    <div class="card-meta">
+                        <span>📄 25 pages</span>
+                        <span>📅 Oct 2024</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Neural Nets</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="notes/neural-networks.pdf" class="btn btn-primary" download>Download PDF</a>
+                        <a href="notes/neural-networks.pdf" class="btn btn-secondary" target="_blank">Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Vision Notes -->
+            <div class="tutorial-card" data-category="cv">
+                <div class="card-header cv">
+                    <div>
+                        <div class="card-icon">👁️</div>
+                        <h3 style="margin: 0; font-size: 1.1em;">Computer Vision</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Object Detection with YOLO</h3>
+                    <p class="card-description">Detailed notes on YOLO architecture, implementation details, and comparison with other detectors.</p>
+                    <div class="card-meta">
+                        <span>📄 18 pages</span>
+                        <span>📅 Sep 2024</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">YOLO</span>
+                        <span class="tag">Detection</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="notes/yolo-detection.pdf" class="btn btn-primary" download>Download PDF</a>
+                        <a href="notes/yolo-detection.pdf" class="btn btn-secondary" target="_blank">Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Algorithms Notes -->
+            <div class="tutorial-card" data-category="algorithms">
+                <div class="card-header algorithms">
+                    <div>
+                        <div class="card-icon">⚡</div>
+                        <h3 style="margin: 0; font-size: 1.1em;">Algorithms</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Dynamic Programming Patterns</h3>
+                    <p class="card-description">Step-by-step approach to solving DP problems with worked examples and visualization.</p>
+                    <div class="card-meta">
+                        <span>📄 32 pages</span>
+                        <span>📅 Aug 2024</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">DP</span>
+                        <span class="tag">Problem Solving</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="notes/dynamic-programming.pdf" class="btn btn-primary" download>Download PDF</a>
+                        <a href="notes/dynamic-programming.pdf" class="btn btn-secondary" target="_blank">Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Math Notes -->
+            <div class="tutorial-card" data-category="math">
+                <div class="card-header math">
+                    <div>
+                        <div class="card-icon">∑</div>
+                        <h3 style="margin: 0; font-size: 1.1em;">Mathematics</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Linear Algebra for ML</h3>
+                    <p class="card-description">Essential linear algebra concepts with applications in machine learning and computer vision.</p>
+                    <div class="card-meta">
+                        <span>📄 28 pages</span>
+                        <span>📅 Jul 2024</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Linear Algebra</span>
+                        <span class="tag">Math</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="notes/linear-algebra.pdf" class="btn btn-primary" download>Download PDF</a>
+                        <a href="notes/linear-algebra.pdf" class="btn btn-secondary" target="_blank">Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programming Notes -->
+            <div class="tutorial-card" data-category="programming">
+                <div class="card-header programming">
+                    <div>
+                        <div class="card-icon">💻</div>
+                        <h3 style="margin: 0; font-size: 1.1em;">Programming</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Python for Data Science</h3>
+                    <p class="card-description">Complete guide to NumPy, Pandas, and Matplotlib with practical examples and exercises.</p>
+                    <div class="card-meta">
+                        <span>📄 40 pages</span>
+                        <span>📅 Jun 2024</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Science</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="notes/python-data-science.pdf" class="btn btn-primary" download>Download PDF</a>
+                        <a href="notes/python-data-science.pdf" class="btn btn-secondary" target="_blank">Preview</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robotics Notes -->
+            <div class="tutorial-card" data-category="robotics">
+                <div class="card-header robotics">
+                    <div>
+                        <div class="card-icon">🤖</div>
+                        <h3 style="margin: 0; font-size: 1.1em;">Robotics</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Robot Kinematics & Motion Planning</h3>
+                    <p class="card-description">Fundamentals of robot kinematics, trajectory planning, and path optimization algorithms.</p>
+                    <div class="card-meta">
+                        <span>📄 35 pages</span>
+                        <span>📅 May 2024</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Kinematics</span>
+                        <span class="tag">Planning</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="notes/robot-kinematics.pdf" class="btn btn-primary" download>Download PDF</a>
+                        <a href="notes/robot-kinematics.pdf" class="btn btn-secondary" target="_blank">Preview</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Prithvi Raj Singh. All notes are for educational purposes.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const tutorialCards = document.querySelectorAll('.tutorial-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                // Filter cards
+                tutorialCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
