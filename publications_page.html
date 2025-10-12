@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Prithvi Raj Singh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+            padding-top: 70px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-brand {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1a202c;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95em;
+        }
+
+        .nav-menu a:hover {
+            color: #2b6cb0;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #2d3748;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2b6cb0;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .filter-section {
+            margin: 40px 0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9em;
+            color: #4a5568;
+        }
+
+        .filter-btn:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+        }
+
+        .filter-btn.active {
+            background: #2b6cb0;
+            color: white;
+            border-color: #2b6cb0;
+        }
+
+        .year-section {
+            margin: 50px 0;
+        }
+
+        .year-header {
+            font-size: 1.8em;
+            color: #1a202c;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .publication-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .publication-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e0;
+        }
+
+        .pub-type {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .pub-type.thesis {
+            background: #e6fffa;
+            color: #047857;
+        }
+
+        .pub-type.conference {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .pub-type.journal {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pub-type.preprint {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .pub-type.workshop {
+            background: #ffe4e6;
+            color: #be123c;
+        }
+
+        .pub-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .pub-authors .me {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .pub-venue {
+            color: #2b6cb0;
+            font-style: italic;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        .pub-abstract {
+            color: #4a5568;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 6px;
+            font-size: 0.9em;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .pub-abstract.show {
+            display: block;
+        }
+
+        .pub-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .pub-btn {
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pub-btn.primary {
+            background: #2b6cb0;
+            color: white;
+        }
+
+        .pub-btn.primary:hover {
+            background: #1a4d8f;
+        }
+
+        .pub-btn.secondary {
+            background: #edf2f7;
+            color: #2d3748;
+            border: 1px solid #e2e8f0;
+        }
+
+        .pub-btn.secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .pub-btn.abstract-toggle {
+            cursor: pointer;
+        }
+
+        .citation-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #2d3748;
+            display: none;
+            position: relative;
+        }
+
+        .citation-box.show {
+            display: block;
+        }
+
+        .copy-citation {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 4px 10px;
+            background: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .copy-citation:hover {
+            background: #1a4d8f;
+        }
+
+        .no-publications {
+            text-align: center;
+            padding: 60px 20px;
+            color: #718096;
+        }
+
+        .no-publications h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                padding: 40px 0 30px;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .pub-title {
+                font-size: 1.15em;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: #ffffff;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                transition: left 0.3s;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                padding: 15px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .nav-menu a {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Prithvi Raj Singh</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Publications & Research</h1>
+            <p class="subtitle">Academic publications, thesis work, and research contributions</p>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Thesis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Conference Papers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Journal Articles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Preprints</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Publications</button>
+                <button class="filter-btn" data-filter="thesis">Thesis</button>
+                <button class="filter-btn" data-filter="conference">Conference</button>
+                <button class="filter-btn" data-filter="journal">Journal</button>
+                <button class="filter-btn" data-filter="preprint">Preprints</button>
+                <button class="filter-btn" data-filter="workshop">Workshops</button>
+            </div>
+        </div>
+
+        <!-- 2025 Publications -->
+        <div class="year-section" data-year="2025">
+            <h2 class="year-header">2025</h2>
+
+            <div class="publication-card" data-type="preprint">
+                <span class="pub-type preprint">Preprint • ArXiv</span>
+                <h3 class="pub-title">An Analysis of Kalman Filter based Object Tracking Methods for Fast-Moving Tiny
+                    Objects</h3>
+                <p class="pub-authors"><span class="me"><b>Prithvi Raj Singh</b>, Anthony Maida, Raju
+                        Gottumukkala</span></p>
+                <p class="pub-venue">arXiv preprint arXiv:2509.18451, September 2025</p>
+
+                <div class="pub-abstract" id="abstract-arxiv">
+                    Unpredictable movement patterns and small visual marks make precise tracking of fast-moving tiny
+                    objects like a racquetball one of the challenging problems in computer vision. This challenge is
+                    particularly relevant for sport robotics applications, where lightweight and accurate tracking
+                    systems can improve robot perception and planning capabilities. While Kalman filter-based tracking
+                    methods have shown success in general object tracking scenarios, their performance degrades
+                    substantially when dealing with rapidly moving objects that exhibit irregular bouncing behavior. In
+                    this study, we evaluate various Kalman filter-based tracking methods for fast-moving tiny objects.
+                </div>
+
+                <div class="citation-box" id="citation-arxiv">
+                    <button class="copy-citation" onclick="copyCitation('citation-arxiv')">Copy</button>
+                    @misc{singh2025analysiskalmanfilterbased,
+                    title={An Analysis of Kalman Filter based Object Tracking Methods for Fast-Moving Tiny Objects},
+                    author={Prithvi Raj Singh and Raju Gottumukkala and Anthony Maida},
+                    year={2025},
+                    eprint={2509.18451},
+                    archivePrefix={arXiv},
+                    primaryClass={cs.CV},
+                    url={https://arxiv.org/abs/2509.18451},
+                    }
+                </div>
+
+                <div class="pub-actions">
+                    <a href="https://arxiv.org/pdf/2509.18451" class="pub-btn primary" target="_blank">📄 ArXiv</a>
+                    <a href="https://arxiv.org/pdf/2509.18451.pdf" class="pub-btn primary" target="_blank">📥 PDF</a>
+                    <button class="pub-btn secondary abstract-toggle" onclick="toggleAbstract('abstract-arxiv')">📝
+                        Abstract</button>
+                    <button class="pub-btn secondary" onclick="toggleCitation('citation-arxiv')">📋 Cite</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- 2023 Publications -->
+        <div class="year-section" data-year="2023">
+            <h2 class="year-header">2023</h2>
+
+            <div class="publication-card" data-type="thesis">
+                <span class="pub-type thesis">Master's Thesis</span>
+                <h3 class="pub-title">Real-time Object Detection and Tracking of Fast-moving Small Objects using RGB-D
+                    Camera and Computer Vision Techniques</h3>
+                <p class="pub-authors"><span class="me">Prithvi Raj Singh</span></p>
+                <p class="pub-venue">University of Louisiana at Lafayette, ProQuest Dissertations Publishing, 2024</p>
+
+                <div class="pub-abstract" id="abstract-thesis">
+                    This thesis explores the use of stereo camera for detection and tracking of fast-moving small
+                    objects in 3D space. Several Object Detection and Tracking algorithms were experimented. For Object
+                    Detection modern YOLO algorithms like YOLOv5, YOLOv7, YOLOv8 as well other multi and single stage
+                    detectors were used. Kalman Filter based algorithms were implemented for the tracking purpose. After
+                    several experiments with the state-of-the-art models, the results were unsatisfactory, leading to
+                    the development of a novel tracking system that augments kinematics to enhance the tracking and
+                    trajectory forecasting of fast-moving tiny objects.
+                </div>
+
+                <div class="citation-box" id="citation-thesis">
+                    <button class="copy-citation" onclick="copyCitation('citation-thesis')">Copy</button>
+                    Singh, P. R. (2024). Real-time Object Detection and Tracking of Fast-moving Small Objects using
+                    RGB-D Camera and Computer Vision Techniques [Master's thesis, University of Louisiana at Lafayette].
+                    ProQuest Dissertations Publishing.
+                </div>
+
+                <div class="pub-actions">
+                    <a href="https://www.proquest.com/docview/3073043126" class="pub-btn primary" target="_blank">📄
+                        View Thesis</a>
+                    <button class="pub-btn secondary abstract-toggle" onclick="toggleAbstract('abstract-thesis')">📝
+                        Abstract</button>
+                    <button class="pub-btn secondary" onclick="toggleCitation('citation-thesis')">📋 Cite</button>
+                </div>
+            </div>
+
+            <div class="publication-card" data-type="conference">
+                <span class="pub-type conference">Technical Report</span>
+                <h3 class="pub-title">Learning with Limited Samples: Experimental Analysis of Deep Learning Models</h3>
+                <p class="pub-authors"><span class="me">Prithvi Raj Singh</span></p>
+                <p class="pub-venue">Deep Learning Course Project, University of Louisiana at Lafayette, 2023</p>
+
+                <div class="pub-abstract" id="abstract-limited">
+                    Conducted experimental analysis on the learning capability of various deep learning based models
+                    like CNN, Compact Convolutional Transformers and Vision Transformers. The goal of the research was
+                    to understand the efficiency of larger deep neural networks for image classification tasks on
+                    various datasets like CIFAR-10, CIFAR-100, MNIST, Fashion-MNIST, and few other small datasets. The
+                    result showed that heavier deep neural networks like ViT, CCT are inefficient in terms of accuracy
+                    and speed, while few layers deep CNN model can give significant accuracy as well as speed.
+                </div>
+
+                <div class="citation-box" id="citation-limited">
+                    <button class="copy-citation" onclick="copyCitation('citation-limited')">Copy</button>
+                    Singh, P. R. (2023). Learning with Limited Samples: Experimental Analysis of Deep Learning Models.
+                    Deep Learning Course Project, University of Louisiana at Lafayette.
+                </div>
+
+                <div class="pub-actions">
+                    <a href="https://github.com/Prithviraj97/CS598DeepLearning" class="pub-btn primary"
+                        target="_blank">💻 Code</a>
+                    <button class="pub-btn secondary abstract-toggle" onclick="toggleAbstract('abstract-limited')">📝
+                        Abstract</button>
+                    <button class="pub-btn secondary" onclick="toggleCitation('citation-limited')">📋 Cite</button>
+                </div>
+            </div>
+
+            <div class="publication-card" data-type="conference">
+                <span class="pub-type conference">Technical Report</span>
+                <h3 class="pub-title">Natural Language Processing and Image Classification with Transformers</h3>
+                <p class="pub-authors"><span class="me">Prithvi Raj Singh</span>, Research Team</p>
+                <p class="pub-venue">Neural Networks Course Project, University of Louisiana at Lafayette, 2023</p>
+
+                <div class="pub-abstract" id="abstract-transformer">
+                    Implementation of Transformer architecture primarily for NLP tasks, focused on Sentiment Analysis
+                    and Language Translation. We performed language translation for English-to-French,
+                    English-to-Spanish, Portuguese-to-English. Our general transformer achieved decent performance in
+                    language translation with acceptable BLEU score, accuracy, and F1 measure for all three language
+                    translations. For sentiment analysis, we focused on question answering (Q-A), text classification,
+                    and Named Entity Recognition (NER). We achieved exact match score of 78% for Q-A and consistent
+                    training accuracy of 40% for the NER task. We also implemented ViT for image classification on
+                    CIFAR-10 with test accuracy of 70% and top-5 accuracy of 97%.
+                </div>
+
+                <div class="citation-box" id="citation-transformer">
+                    <button class="copy-citation" onclick="copyCitation('citation-transformer')">Copy</button>
+                    Singh, P. R., et al. (2023). Natural Language Processing and Image Classification with Transformers.
+                    Neural Networks Course Project, University of Louisiana at Lafayette.
+                </div>
+
+                <div class="pub-actions">
+                    <a href="https://github.com/Prithviraj97/NeuralNetworks" class="pub-btn primary" target="_blank">💻
+                        Code</a>
+                    <button class="pub-btn secondary abstract-toggle"
+                        onclick="toggleAbstract('abstract-transformer')">📝 Abstract</button>
+                    <button class="pub-btn secondary" onclick="toggleCitation('citation-transformer')">📋 Cite</button>
+                </div>
+            </div>
+
+            <div class="publication-card" data-type="conference">
+                <span class="pub-type conference">Conference Paper</span>
+                <h3 class="pub-title">Object Detection with Deep Reinforcement Learning</h3>
+                <p class="pub-authors"><span class="me">Prithvi Raj Singh</span>, Co-Author Name</p>
+                <p class="pub-venue">Neural Networks Course Project, University of Louisiana at Lafayette, 2024</p>
+
+                <div class="pub-abstract" id="abstract-rl">
+                    We formulate the problem as a sequential decision-making process where an agent is equipped with a
+                    conventional object detector to detect objects and the agent is trained to make the detection result
+                    better. In this paper, we experiment with using the dynamic method for object detection. Our
+                    detector, which uses VGG16 pre-trained on ImageNet as a base, is trained using the PASCAL VOC2012
+                    dataset. The agent takes more actions in transforming the bounding box and the reward accumulated.
+                    The AP and recall are best for an IoU threshold of 0.5 or lower. We achieved AP and recall of 36.68
+                    and 59.0 respectively for the 'cat' class at IoU of 0.5.
+                </div>
+
+                <div class="citation-box" id="citation-rl">
+                    <button class="copy-citation" onclick="copyCitation('citation-rl')">Copy</button>
+                    Singh, P. R., et al. (2024). Object Detection with Deep Reinforcement Learning. Neural Networks
+                    Course Project, University of Louisiana at Lafayette.
+                </div>
+
+                <div class="pub-actions">
+                    <a href="https://Prithviraj97.github.io/Reinforcement_Learning_Final.pdf" class="pub-btn primary"
+                        target="_blank">📄 PDF</a>
+                    <button class="pub-btn secondary abstract-toggle" onclick="toggleAbstract('abstract-rl')">📝
+                        Abstract</button>
+                    <button class="pub-btn secondary" onclick="toggleCitation('citation-rl')">📋 Cite</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Prithvi Raj Singh. For collaboration inquiries, please contact via email.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const publicationCards = document.querySelectorAll('.publication-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                publicationCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-type') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Toggle abstract
+        function toggleAbstract(id) {
+            const abstract = document.getElementById(id);
+            abstract.classList.toggle('show');
+        }
+
+        // Toggle citation
+        function toggleCitation(id) {
+            const citation = document.getElementById(id);
+            citation.classList.toggle('show');
+        }
+
+        // Copy citation to clipboard
+        function copyCitation(id) {
+            const citationBox = document.getElementById(id);
+            const citationText = citationBox.textContent.replace('Copy', '').trim();
+
+            navigator.clipboard.writeText(citationText).then(() => {
+                const button = citationBox.querySelector('.copy-citation');
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>
